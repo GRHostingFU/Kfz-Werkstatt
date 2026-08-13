@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="900" height="1100" role="img" aria-label="Illustration eines Fahrzeugs auf der Hebebühne während der Inspektion">
+  <defs>
+    <linearGradient id="raum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#302a25"/>
+      <stop offset="1" stop-color="#191512"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="1100" fill="url(#raum)"/>
+
+  <!-- Wandpaneele -->
+  <g stroke="#3b332c" stroke-width="3" opacity="0.8">
+    <path d="M0 180h900M0 360h900M0 540h900"/>
+    <path d="M180 0v540M420 0v540M660 0v540"/>
+  </g>
+
+  <!-- Werkzeugtafel -->
+  <rect x="560" y="120" width="250" height="240" rx="8" fill="#241f1b" stroke="#3d352e" stroke-width="4"/>
+  <g stroke="#8d7c66" stroke-width="8" stroke-linecap="round">
+    <path d="M600 170v66M640 170v46M680 170v76"/>
+    <path d="M600 290h58M600 326h96"/>
+  </g>
+  <circle cx="760" cy="200" r="14" fill="#b4531f"/>
+  <circle cx="760" cy="252" r="14" fill="#2f6d6a"/>
+
+  <!-- Boden -->
+  <rect x="0" y="880" width="900" height="220" fill="#151210"/>
+  <path d="M0 880h900" stroke="#3d352e" stroke-width="5"/>
+  <g stroke="#201b18" stroke-width="4">
+    <path d="M150 880v220M450 880v220M750 880v220"/>
+  </g>
+
+  <!-- Hebebühnensäulen -->
+  <rect x="96" y="470" width="40" height="410" rx="8" fill="#413830"/>
+  <rect x="764" y="470" width="40" height="410" rx="8" fill="#413830"/>
+  <rect x="96" y="640" width="40" height="16" fill="#b4531f"/>
+  <rect x="764" y="640" width="40" height="16" fill="#b4531f"/>
+  <rect x="136" y="636" width="110" height="18" rx="9" fill="#4e453b"/>
+  <rect x="654" y="636" width="110" height="18" rx="9" fill="#4e453b"/>
+
+  <!-- Fahrzeug von unten/schräg, angehoben -->
+  <g>
+    <rect x="230" y="560" width="440" height="96" rx="26" fill="#4d5a61"/>
+    <rect x="258" y="586" width="384" height="44" rx="16" fill="#3c464c"/>
+    <!-- Achsen -->
+    <rect x="212" y="596" width="60" height="20" rx="10" fill="#6d6155"/>
+    <rect x="628" y="596" width="60" height="20" rx="10" fill="#6d6155"/>
+    <!-- Auspuffstrang -->
+    <path d="M290 640 h300 a20 20 0 0 1 20 20 v6" stroke="#8d7c66" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <!-- Ölwanne -->
+    <rect x="330" y="646" width="120" height="34" rx="12" fill="#2b241f"/>
+    <circle cx="390" cy="686" r="9" fill="#b4531f"/>
+    <!-- Räder -->
+    <g fill="#141110">
+      <circle cx="242" cy="606" r="58"/>
+      <circle cx="658" cy="606" r="58"/>
+    </g>
+    <g fill="#4e453b">
+      <circle cx="242" cy="606" r="25"/>
+      <circle cx="658" cy="606" r="25"/>
+    </g>
+  </g>
+
+  <!-- Tropfender Ölwechsel: Auffangwanne -->
+  <rect x="336" y="826" width="150" height="42" rx="10" fill="#2f6d6a"/>
+  <path d="M392 700v96" stroke="#c8912f" stroke-width="5" stroke-dasharray="10 16" stroke-linecap="round"/>
+
+  <!-- Mechanikerin mit Lampe -->
+  <g transform="translate(560 700)">
+    <circle cx="0" cy="0" r="30" fill="#c98b5e"/>
+    <path d="M-26 -14 a26 22 0 0 1 52 0 q-26 -12 -52 0Z" fill="#3a2f27"/>
+    <path d="M-34 34 h68 a20 20 0 0 1 20 20 v126 h-108 v-126 a20 20 0 0 1 20 -20 Z" fill="#2f6d6a"/>
+    <path d="M30 60 l52 -46" stroke="#2f6d6a" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="90" cy="6" r="16" fill="#f6d9a8"/>
+    <path d="M-40 120 h80" stroke="#26564f" stroke-width="6"/>
+  </g>
+
+  <!-- Rollwagen -->
+  <g transform="translate(96 780)">
+    <rect x="0" y="0" width="130" height="100" rx="10" fill="#b4531f"/>
+    <path d="M0 36h130M0 68h130" stroke="#8f3f16" stroke-width="5"/>
+    <circle cx="26" cy="112" r="14" fill="#2b241f"/>
+    <circle cx="104" cy="112" r="14" fill="#2b241f"/>
+  </g>
+</svg>

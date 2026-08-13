@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Illustriertes Porträt">
+  <rect width="600" height="600" fill="#334a44"/>
+  <circle cx="300" cy="330" r="210" fill="#000" opacity="0.12"/>
+  <!-- Schultern / Arbeitskleidung -->
+  <path d="M300 400 c-96 0 -170 44 -186 118 -4 18 -6 46 -6 82 h384 c0 -36 -2 -64 -6 -82 -16 -74 -90 -118 -186 -118Z" fill="#6b5a46"/>
+  <path d="M300 400 l-38 34 38 44 38 -44Z" fill="#efe9e0" opacity="0.9"/>
+  <circle cx="220" cy="512" r="9" fill="#efe9e0" opacity="0.55"/>
+  <!-- Hals -->
+  <path d="M262 344h76v70a38 38 0 0 1 -76 0Z" fill="#e6c09a"/>
+  <path d="M262 372q38 26 76 0v-28h-76Z" fill="#000" opacity="0.14"/>
+  <!-- Kopf -->
+  <ellipse cx="300" cy="262" rx="98" ry="112" fill="#e6c09a"/>
+  <!-- Ohren -->
+  <circle cx="200" cy="268" r="17" fill="#e6c09a"/>
+  <circle cx="400" cy="268" r="17" fill="#e6c09a"/>
+  <path d="M198 224c0-62 44-104 102-104s102 42 102 104v10H198Z" fill="#b4531f"/><rect x="190" y="228" width="220" height="34" rx="17" fill="#8f3f16"/>
+  <!-- Augenbrauen -->
+  <path d="M248 236q22 -12 44 -2" stroke="#c19a45" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M308 234q22 -10 44 2" stroke="#c19a45" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <!-- Augen -->
+  <circle cx="268" cy="266" r="10" fill="#2b241f"/>
+  <circle cx="332" cy="266" r="10" fill="#2b241f"/>
+  
+  <!-- Nase und Mund -->
+  <path d="M300 276v26l-12 8" stroke="#000" stroke-opacity="0.22" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M278 332q22 18 44 0" stroke="#8a4a3a" stroke-width="8" fill="none" stroke-linecap="round"/>
+</svg>

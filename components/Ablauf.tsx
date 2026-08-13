@@ -1,36 +1,37 @@
+import { Blockkopf } from "./Abschnitt";
 import type { HomeContent } from "@/lib/content";
 
-export default function Ablauf({ ablauf }: { ablauf: HomeContent["ablauf"] }) {
+export default function Ablauf({
+  ablauf,
+  kopf = true,
+}: {
+  ablauf: HomeContent["ablauf"];
+  kopf?: boolean;
+}) {
   return (
-    <section id="ablauf" className="py-20 md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-4">
-          <p className="text-xs font-medium tracking-[0.18em] text-rost uppercase">
-            {ablauf.kicker}
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            {ablauf.titel}
-          </h2>
-          <p className="mt-5 leading-relaxed text-stone-600">{ablauf.text}</p>
-        </div>
+    <section className="py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        {kopf ? (
+          <Blockkopf
+            kicker={ablauf.kicker}
+            titel={ablauf.titel}
+            text={ablauf.text}
+          />
+        ) : null}
 
-        <ol className="lg:col-span-8">
+        <ol className={`grid gap-4 md:grid-cols-3 ${kopf ? "mt-12" : ""}`}>
           {ablauf.schritte.map((s) => (
             <li
               key={s.nummer}
-              className="group flex gap-6 border-t border-stone-900/10 py-7 transition-colors duration-200 ease-out first:border-t-0 first:pt-0 hover:border-rost/40"
+              className="group relative rounded-2xl border border-linie bg-flaeche p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-akzent/40 hover:shadow-md"
             >
-              <span className="w-10 shrink-0 pt-1 font-mono text-sm text-stone-400 tabular-nums transition-colors duration-200 ease-out group-hover:text-rost">
+              <span className="grid size-10 place-items-center rounded-full bg-akzent-weich font-mono text-sm text-akzent tabular-nums">
                 {s.nummer}
               </span>
-              <div>
-                <h3 className="text-xl font-medium tracking-tight">
-                  {s.titel}
-                </h3>
-                <p className="mt-2 max-w-xl leading-relaxed text-stone-600">
-                  {s.text}
-                </p>
-              </div>
+              <h3 className="mt-5 text-xl font-medium tracking-tight">
+                {s.titel}
+              </h3>
+              <p className="mt-2 leading-relaxed text-gedaempft">{s.text}</p>
             </li>
           ))}
         </ol>

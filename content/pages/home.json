@@ -11,19 +11,34 @@
     "strasse": "Alte Zechenstraße 14",
     "ort": "45721 Lohberg",
     "oeffnungszeiten": [
-      { "tage": "Montag – Donnerstag", "zeit": "07:30 – 17:00 Uhr" },
-      { "tage": "Freitag", "zeit": "07:30 – 14:00 Uhr" },
-      { "tage": "Samstag", "zeit": "nach Absprache, Teileannahme bis 11:00" }
+      {
+        "tage": "Montag – Donnerstag",
+        "zeit": "07:30 – 17:00 Uhr"
+      },
+      {
+        "tage": "Freitag",
+        "zeit": "07:30 – 14:00 Uhr"
+      },
+      {
+        "tage": "Samstag",
+        "zeit": "nach Absprache, Teileannahme bis 11:00"
+      }
     ]
   },
   "hero": {
     "kicker": "Freie Werkstatt für alle Fahrzeugmarken",
     "titel": "Ehrliches Handwerk statt teurer Glaspalast.",
     "text": "Wir sind zu fünft, wir haben keine Kaffeebar und keine Lounge. Was wir haben: eine Hebebühne mehr als nötig, Werkzeug, das was taugt, und die Angewohnheit, vor der Reparatur anzurufen, wenn es teurer wird als besprochen.",
-    "primaerButton": { "label": "Termin anfragen", "ziel": "#kontakt" },
-    "sekundaerButton": { "label": "Was wir machen", "ziel": "#leistungen" },
-    "bild": "https://placehold.co/1200x900/1c1917/f7f5f2?text=Werkstatthalle",
-    "bildAlt": "Blick in die Werkstatthalle mit zwei Hebebühnen",
+    "primaerButton": {
+      "label": "Termin anfragen",
+      "ziel": "/kontakt"
+    },
+    "sekundaerButton": {
+      "label": "Was wir machen",
+      "ziel": "/leistungen"
+    },
+    "bild": "/bilder/werkstatt-halle.svg",
+    "bildAlt": "Illustration der Werkstatthalle mit Hebebühne, Werkzeugwand und Werkbank",
     "hinweise": [
       "Kostenvoranschlag vorab – schriftlich",
       "Ersatzwagen auf Wunsch, ohne Aufpreis",
@@ -74,46 +89,55 @@
       "Die Halle an der Alten Zechenstraße war früher der Fuhrpark einer Spedition. Wir haben 2011 angefangen, das Dach neu gemacht, und seitdem Stück für Stück umgebaut – meistens im Winter, wenn weniger los ist.",
       "Was wir bewusst nicht gemacht haben: einen Empfangstresen aus Glas. Wer reinkommt, steht direkt in der Halle und redet mit dem, der später auch an seinem Auto schraubt. Das spart uns beiden das Stille-Post-Spiel."
     ],
-    "bild": "https://placehold.co/900x1100/44403c/f7f5f2?text=Hebeb%C3%BChne",
-    "bildAlt": "Fahrzeug auf der Hebebühne während einer Inspektion",
+    "bild": "/bilder/hebebuehne.svg",
+    "bildAlt": "Illustration eines Fahrzeugs auf der Hebebühne während der Inspektion",
     "zahlen": [
-      { "wert": "15", "label": "Jahre Meisterbetrieb" },
-      { "wert": "5", "label": "Leute im Team" },
-      { "wert": "2", "label": "Hebebühnen + Grube" }
+      {
+        "wert": "15",
+        "label": "Jahre Meisterbetrieb"
+      },
+      {
+        "wert": "5",
+        "label": "Leute im Team"
+      },
+      {
+        "wert": "2",
+        "label": "Hebebühnen + Grube"
+      }
     ]
   },
   "team": {
     "kicker": "Team",
     "titel": "Wer bei uns schraubt",
-    "text": "Keine Stockfotos – die Bilder tauschen wir gegen echte, sobald der Fotograf da war.",
+    "text": "Illustrationen statt Stockfotos – echte Bilder tauschen wir aus, sobald der Fotograf da war.",
     "mitglieder": [
       {
         "name": "Michael Brandner",
         "rolle": "Kfz-Meister, Inhaber",
         "text": "Hat die Werkstatt 2011 aufgemacht. Zuständig für Diagnose, Kostenvoranschläge und dafür, dass abends abgeschlossen wird.",
-        "bild": "https://placehold.co/600x600/1c1917/f7f5f2?text=Michael",
-        "bildAlt": "Porträt von Michael Brandner"
+        "bild": "/bilder/team-michael.svg",
+        "bildAlt": "Illustriertes Porträt von Michael Brandner"
       },
       {
         "name": "Sabine Brandner",
         "rolle": "Büro & Terminplanung",
         "text": "Nimmt das Telefon ab, schreibt die Rechnungen und sagt Ihnen ehrlich, wenn diese Woche wirklich nichts mehr frei ist.",
-        "bild": "https://placehold.co/600x600/44403c/f7f5f2?text=Sabine",
-        "bildAlt": "Porträt von Sabine Brandner"
+        "bild": "/bilder/team-sabine.svg",
+        "bildAlt": "Illustriertes Porträt von Sabine Brandner"
       },
       {
         "name": "Tarek Yildiz",
         "rolle": "Kfz-Mechatroniker",
         "text": "Seit 2016 dabei, kam als Geselle aus dem Nutzfahrzeugbereich. Fahrwerk, Bremsen, Achsvermessung.",
-        "bild": "https://placehold.co/600x600/57534e/f7f5f2?text=Tarek",
-        "bildAlt": "Porträt von Tarek Yildiz"
+        "bild": "/bilder/team-tarek.svg",
+        "bildAlt": "Illustriertes Porträt von Tarek Yildiz"
       },
       {
         "name": "Jonas Peters",
         "rolle": "Auszubildender, 3. Lehrjahr",
         "text": "Macht Reifen, Ölservice und inzwischen auch Bremsen allein. Fragt viel, das ist gut so.",
-        "bild": "https://placehold.co/600x600/78716c/f7f5f2?text=Jonas",
-        "bildAlt": "Porträt von Jonas Peters"
+        "bild": "/bilder/team-jonas.svg",
+        "bildAlt": "Illustriertes Porträt von Jonas Peters"
       }
     ]
   },
