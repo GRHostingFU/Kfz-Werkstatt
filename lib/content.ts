@@ -1,4 +1,6 @@
 import home from "@/content/pages/home.json";
+import impressum from "@/content/pages/impressum.json";
+import datenschutz from "@/content/pages/datenschutz.json";
 
 export type Button = { label: string; ziel: string };
 
@@ -75,6 +77,23 @@ export type HomeContent = {
  */
 export function getHomeContent(): HomeContent {
   return home as HomeContent;
+}
+
+export type RechtstextContent = {
+  titel: string;
+  einleitung: string;
+  warnung?: string;
+  abschnitte: { titel: string; absaetze: string[] }[];
+};
+
+const rechtstexte = { impressum, datenschutz } satisfies Record<
+  string,
+  RechtstextContent
+>;
+
+/** Impressum bzw. Datenschutzerklaerung, ebenfalls ueber /admin pflegbar. */
+export function getRechtstext(name: keyof typeof rechtstexte): RechtstextContent {
+  return rechtstexte[name];
 }
 
 /** Telefonnummer als tel:-Link, ohne Leerzeichen und Trennzeichen. */

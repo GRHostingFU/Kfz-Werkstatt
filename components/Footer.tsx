@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { HomeContent } from "@/lib/content";
 
 export default function Footer({
@@ -22,10 +23,20 @@ export default function Footer({
           <p>
             Demo-Seite ohne Tracking, ohne Cookies, ohne externe Schriftarten.
           </p>
-          <p className="mt-3">
-            Impressum und Datenschutzerklärung fehlen noch – vor einem echten
-            Livegang zwingend ergänzen.
-          </p>
+          <nav className="mt-4 flex gap-5">
+            <Link
+              href="/impressum"
+              className="transition-colors duration-200 ease-out hover:text-sand"
+            >
+              Impressum
+            </Link>
+            <Link
+              href="/datenschutz"
+              className="transition-colors duration-200 ease-out hover:text-sand"
+            >
+              Datenschutz
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

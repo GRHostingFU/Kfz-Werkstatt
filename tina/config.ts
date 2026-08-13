@@ -314,6 +314,51 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "rechtstext",
+        label: "Rechtstexte",
+        path: "content/pages",
+        format: "json",
+        match: { include: "{impressum,datenschutz}" },
+        ui: {
+          allowedActions: { create: false, delete: false },
+          router: (props) => `/${props.document._sys.filename}`,
+        },
+        fields: [
+          { type: "string", name: "titel", label: "Überschrift" },
+          {
+            type: "string",
+            name: "einleitung",
+            label: "Einleitung",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "string",
+            name: "warnung",
+            label: "Hinweisbox (leer lassen zum Ausblenden)",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "object",
+            name: "abschnitte",
+            label: "Abschnitte",
+            list: true,
+            ui: {
+              itemProps: (item) => ({ label: item?.titel }),
+            },
+            fields: [
+              { type: "string", name: "titel", label: "Titel" },
+              {
+                type: "string",
+                name: "absaetze",
+                label: "Absätze",
+                list: true,
+                ui: { component: "textarea" },
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });

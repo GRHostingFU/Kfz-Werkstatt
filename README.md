@@ -14,9 +14,11 @@ npm run dev:tina     # Website + Live-Editor  -> http://localhost:3000/admin
 
 ```
 app/                 layout.tsx, page.tsx, globals.css
+                     impressum/, datenschutz/
 components/          Header, Hero, Leistungen, Werkstatt, Team,
                      Ablauf, Faq, Kontakt, TerminFormular, Footer
 content/pages/       home.json – alle Texte und Bilder der Startseite
+                     impressum.json, datenschutz.json
 lib/content.ts       typisierter Zugriff auf den Inhalt
 tina/config.ts       TinaCMS-Collections für den Editor
 ```
@@ -59,8 +61,22 @@ dann wird der Editor mit nach `/admin` deployt.
   `next/image` mit festen Seitenverhältnissen (kein CLS).
 - **`prefers-reduced-motion`** wird respektiert.
 
+## Rechtstexte
+
+Impressum (`/impressum`) und Datenschutzerklärung (`/datenschutz`) liegen als
+`content/pages/impressum.json` bzw. `datenschutz.json` und sind über den Tina-
+Editor unter „Rechtstexte“ bearbeitbar. Beide Seiten sind über `robots: noindex`
+von der Indexierung ausgenommen, solange die Angaben erfunden sind.
+
+Der Datenschutztext beschreibt den tatsächlichen Stand dieser Demo: keine
+Cookies, kein Tracking, keine externen Schriften, deshalb bewusst kein
+Cookie-Banner. Sobald echte Dienste dazukommen (Karte, Analyse, Formular-
+Versand), muss der Text ergänzt werden.
+
 ## Noch offen für einen echten Livegang
 
-- Impressum und Datenschutzerklärung.
+- Angaben in Impressum und Datenschutzerklärung durch die echten Daten
+  ersetzen und juristisch prüfen lassen. Die Texte sind Vorlagen, keine
+  Rechtsberatung.
 - Das Kontaktformular ist eine Demo: es verschickt und speichert nichts.
 - Adresse, Telefonnummer, Preise und Team sind erfunden.
