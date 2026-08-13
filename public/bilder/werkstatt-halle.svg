@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Illustration einer Werkstatthalle mit Hebebühne, Werkbank und Werkzeugwand">
+  <defs>
+    <linearGradient id="wand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2622"/>
+      <stop offset="1" stop-color="#1b1714"/>
+    </linearGradient>
+    <linearGradient id="licht" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#f6d9a8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#f6d9a8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#wand)"/>
+
+  <!-- Hallentore hinten -->
+  <rect x="80" y="150" width="300" height="420" rx="6" fill="#231e1a" stroke="#3d352e" stroke-width="4"/>
+  <g stroke="#3d352e" stroke-width="3">
+    <path d="M80 230h300M80 310h300M80 390h300M80 470h300"/>
+  </g>
+
+  <!-- Fenster mit Tageslicht -->
+  <rect x="820" y="120" width="300" height="200" rx="8" fill="#3c342c" stroke="#4d443a" stroke-width="4"/>
+  <rect x="836" y="136" width="128" height="168" fill="#8fa3ad" opacity="0.55"/>
+  <rect x="976" y="136" width="128" height="168" fill="#8fa3ad" opacity="0.4"/>
+  <path d="M836 320 L720 700 L1220 700 L1104 320Z" fill="url(#licht)"/>
+
+  <!-- Werkzeugwand -->
+  <rect x="440" y="180" width="320" height="220" rx="6" fill="#241f1b" stroke="#3d352e" stroke-width="4"/>
+  <g stroke="#7a6a58" stroke-width="7" stroke-linecap="round">
+    <path d="M480 230v70M520 230v50M560 230v80"/>
+    <path d="M620 240h60M620 280h40"/>
+  </g>
+  <g fill="#b4531f">
+    <circle cx="700" cy="240" r="11"/>
+    <circle cx="700" cy="300" r="11"/>
+  </g>
+  <g stroke="#8d7c66" stroke-width="6" stroke-linecap="round">
+    <path d="M480 340h40M540 340h60M620 340h50"/>
+  </g>
+
+  <!-- Boden -->
+  <rect x="0" y="700" width="1200" height="200" fill="#171310"/>
+  <path d="M0 700h1200" stroke="#3d352e" stroke-width="5"/>
+  <g stroke="#221d19" stroke-width="4">
+    <path d="M120 700v200M360 700v200M600 700v200M840 700v200M1080 700v200"/>
+  </g>
+
+  <!-- Hebebühne: Säulen -->
+  <rect x="300" y="430" width="34" height="270" rx="6" fill="#3f372f"/>
+  <rect x="880" y="430" width="34" height="270" rx="6" fill="#3f372f"/>
+  <rect x="300" y="560" width="34" height="14" fill="#b4531f"/>
+  <rect x="880" y="560" width="34" height="14" fill="#b4531f"/>
+  <!-- Tragarme -->
+  <rect x="334" y="556" width="120" height="16" rx="8" fill="#4b4239"/>
+  <rect x="760" y="556" width="120" height="16" rx="8" fill="#4b4239"/>
+
+  <!-- Fahrzeug in Seitenansicht, angehoben -->
+  <g>
+    <path d="M420 545 h380 a40 40 0 0 1 34 19 l38 62 a28 28 0 0 1 -24 42 H406 a26 26 0 0 1 -26 -26 v-58 a39 39 0 0 1 40 -39 Z" fill="#5c6b73"/>
+    <path d="M470 546 l18 -58 a26 26 0 0 1 25 -19 h170 a26 26 0 0 1 24 17 l22 60 Z" fill="#93a5ad" opacity="0.85"/>
+    <path d="M596 469 v77" stroke="#5c6b73" stroke-width="7"/>
+    <rect x="392" y="596" width="34" height="13" rx="6" fill="#f0d9a6"/>
+    <rect x="838" y="596" width="30" height="13" rx="6" fill="#d1705a"/>
+    <!-- Räder -->
+    <g fill="#161311">
+      <circle cx="500" cy="668" r="52"/>
+      <circle cx="768" cy="668" r="52"/>
+    </g>
+    <g fill="#4b4239">
+      <circle cx="500" cy="668" r="23"/>
+      <circle cx="768" cy="668" r="23"/>
+    </g>
+  </g>
+
+  <!-- Mechaniker unter dem Fahrzeug -->
+  <g>
+    <circle cx="640" cy="742" r="24" fill="#c98b5e"/>
+    <path d="M604 766 h74 a16 16 0 0 1 16 16 v34 h-106 v-34 a16 16 0 0 1 16 -16 Z" fill="#2f6d6a"/>
+    <path d="M672 776 l58 -34" stroke="#2f6d6a" stroke-width="17" stroke-linecap="round"/>
+    <path d="M726 744 l30 -16" stroke="#8d7c66" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <!-- Werkbank rechts -->
+  <rect x="960" y="590" width="210" height="18" rx="4" fill="#6b5a46"/>
+  <rect x="972" y="608" width="14" height="92" fill="#4b4239"/>
+  <rect x="1144" y="608" width="14" height="92" fill="#4b4239"/>
+  <rect x="990" y="548" width="46" height="42" rx="4" fill="#b4531f"/>
+  <rect x="1052" y="562" width="34" height="28" rx="4" fill="#8d7c66"/>
+  <circle cx="1122" cy="572" r="18" fill="#3f372f"/>
+
+  <!-- Ölkanne und Reifenstapel links -->
+  <g transform="translate(150 604)">
+    <rect x="0" y="18" width="86" height="78" rx="10" fill="#2f6d6a"/>
+    <rect x="20" y="0" width="46" height="20" rx="5" fill="#26564f"/>
+    <rect x="16" y="40" width="54" height="26" rx="4" fill="#e8e2d8" opacity="0.75"/>
+  </g>
+  <g fill="#1d1916" stroke="#3d352e" stroke-width="3">
+    <ellipse cx="1060" cy="694" rx="58" ry="17"/>
+    <ellipse cx="1060" cy="672" rx="58" ry="17"/>
+    <ellipse cx="1060" cy="650" rx="58" ry="17"/>
+  </g>
+
+  <!-- Hängelampen -->
+  <g stroke="#4d443a" stroke-width="4">
+    <path d="M300 0v96M900 0v70"/>
+  </g>
+  <path d="M258 96h84l26 40h-136Z" fill="#4b4239"/>
+  <path d="M862 70h76l24 36h-124Z" fill="#4b4239"/>
+  <ellipse cx="300" cy="140" rx="52" ry="12" fill="#f6d9a8" opacity="0.55"/>
+  <ellipse cx="900" cy="110" rx="48" ry="11" fill="#f6d9a8" opacity="0.45"/>
+</svg>

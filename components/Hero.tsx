@@ -1,39 +1,40 @@
-import Image from "next/image";
+import Link from "next/link";
+import Bild from "./Bild";
 import type { HomeContent } from "@/lib/content";
 
 export default function Hero({ hero }: { hero: HomeContent["hero"] }) {
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-6xl gap-14 px-5 pt-16 pb-20 sm:px-8 md:pt-24 md:pb-28 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-7 lg:pr-10">
-          <p className="text-xs font-medium tracking-[0.18em] text-rost uppercase">
+    <section className="relative overflow-hidden border-b border-linie">
+      <div className="mx-auto grid max-w-6xl gap-14 px-5 pt-14 pb-16 sm:px-8 md:pt-20 md:pb-24 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-6 lg:pr-8">
+          <p className="text-xs font-medium tracking-[0.18em] text-akzent uppercase">
             {hero.kicker}
           </p>
           <h1 className="mt-5 max-w-[15ch] text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
             {hero.titel}
           </h1>
-          <p className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-stone-600">
+          <p className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-gedaempft">
             {hero.text}
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <a
+            <Link
               href={hero.primaerButton.ziel}
-              className="rounded-full bg-oel px-6 py-3 text-sm font-medium text-sand transition-all duration-200 ease-out hover:-translate-y-px hover:bg-rost hover:shadow-lg hover:shadow-stone-900/10 active:translate-y-0 active:scale-[0.99]"
+              className="rounded-full bg-akzent px-6 py-3 text-sm font-medium text-auf-akzent transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-lg hover:shadow-black/10 active:translate-y-0 active:scale-[0.99]"
             >
               {hero.primaerButton.label}
-            </a>
-            <a
+            </Link>
+            <Link
               href={hero.sekundaerButton.ziel}
-              className="rounded-full border border-stone-900/15 px-6 py-3 text-sm font-medium transition-all duration-200 ease-out hover:border-stone-900/30 hover:bg-stone-900/5 active:scale-[0.99]"
+              className="rounded-full border border-linie px-6 py-3 text-sm font-medium transition-all duration-200 ease-out hover:border-akzent hover:bg-flaeche-2 active:scale-[0.99]"
             >
               {hero.sekundaerButton.label}
-            </a>
+            </Link>
           </div>
 
-          <ul className="mt-10 space-y-2.5 border-l-2 border-rost/30 pl-5">
+          <ul className="mt-10 space-y-2.5 border-l-2 border-akzent/40 pl-5">
             {hero.hinweise.map((h) => (
-              <li key={h} className="text-sm text-stone-600">
+              <li key={h} className="text-sm text-gedaempft">
                 {h}
               </li>
             ))}
@@ -41,15 +42,13 @@ export default function Hero({ hero }: { hero: HomeContent["hero"] }) {
         </div>
 
         {/* leicht versetzt statt sauber zentriert – das Layout soll atmen */}
-        <div className="lg:col-span-5 lg:pt-10">
-          <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-stone-200 shadow-sm lg:rotate-[0.6deg]">
-            <Image
+        <div className="lg:col-span-6 lg:pt-8">
+          <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-linie bg-flaeche-2 shadow-sm lg:rotate-[0.6deg]">
+            <Bild
               src={hero.bild}
               alt={hero.bildAlt}
-              fill
               priority
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
+              sizes="(min-width: 1024px) 48vw, 100vw"
             />
           </div>
         </div>

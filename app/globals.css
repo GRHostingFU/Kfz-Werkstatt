@@ -1,10 +1,37 @@
 @import "tailwindcss";
 
 /*
-  Bewusst nur System-Schriften: keine externen Font-Requests (DSGVO),
-  kein FOUT, kein zusaetzlicher Netzwerk-Roundtrip.
+  Dunkelmodus ueber die Klasse .dark am <html>-Element. Gesetzt wird sie
+  vom Inline-Skript im Layout, bevor der erste Pixel gemalt wird.
 */
-@theme {
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --grund: #f6f4f1;
+  --flaeche: #ffffff;
+  --flaeche-2: #efece7;
+  --inhalt: #1c1917;
+  --gedaempft: #57534e;
+  --linie: rgb(28 25 23 / 0.12);
+  --akzent: #b4531f;
+  --akzent-weich: rgb(180 83 31 / 0.1);
+  --auf-akzent: #ffffff;
+}
+
+.dark {
+  --grund: #14110f;
+  --flaeche: #1e1a17;
+  --flaeche-2: #262019;
+  --inhalt: #f3eee8;
+  --gedaempft: #a8a29e;
+  --linie: rgb(243 238 232 / 0.14);
+  --akzent: #e07a35;
+  --akzent-weich: rgb(224 122 53 / 0.14);
+  --auf-akzent: #1c1917;
+}
+
+@theme inline {
+  /* Bewusst nur System-Schriften: keine externen Font-Requests (DSGVO). */
   --font-sans:
     ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif;
@@ -12,32 +39,46 @@
     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
     monospace;
 
-  --color-oel: #1c1917;
-  --color-sand: #f7f5f2;
-  --color-rost: #b4531f;
-  --color-rost-dunkel: #8f3f16;
+  --color-grund: var(--grund);
+  --color-flaeche: var(--flaeche);
+  --color-flaeche-2: var(--flaeche-2);
+  --color-inhalt: var(--inhalt);
+  --color-gedaempft: var(--gedaempft);
+  --color-linie: var(--linie);
+  --color-akzent: var(--akzent);
+  --color-akzent-weich: var(--akzent-weich);
+  --color-auf-akzent: var(--auf-akzent);
 }
 
 html {
   scroll-behavior: smooth;
   /* verhindert Sprünge beim Ankerscroll unter der Sticky-Navigation */
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 6rem;
   -webkit-text-size-adjust: 100%;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
-  background-color: var(--color-sand);
-  color: var(--color-oel);
+  background-color: var(--grund);
+  color: var(--inhalt);
   font-family: var(--font-sans);
+  /* weicher Uebergang beim Umschalten, ohne die Navigation flackern zu lassen */
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 ::selection {
-  background-color: var(--color-rost);
-  color: #fff;
+  background-color: var(--akzent);
+  color: var(--auf-akzent);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-rost);
+  outline: 2px solid var(--akzent);
   outline-offset: 3px;
 }
 
