@@ -1,0 +1,178 @@
+{
+  "seo": {
+    "title": "Kfz-Werkstatt Brandner – Meisterbetrieb in Lohberg",
+    "description": "Freie Kfz-Werkstatt in Lohberg. Inspektion, HU-Vorbereitung, Reparatur für alle Fahrzeugmarken. Familienbetrieb mit Meisterbrief, feste Preise, ehrliche Ansagen."
+  },
+  "betrieb": {
+    "name": "Kfz-Werkstatt Brandner",
+    "claim": "Meisterbetrieb seit 15 Jahren",
+    "telefon": "0 23 64 / 88 21 40",
+    "email": "werkstatt@brandner-kfz.example",
+    "strasse": "Alte Zechenstraße 14",
+    "ort": "45721 Lohberg",
+    "oeffnungszeiten": [
+      { "tage": "Montag – Donnerstag", "zeit": "07:30 – 17:00 Uhr" },
+      { "tage": "Freitag", "zeit": "07:30 – 14:00 Uhr" },
+      { "tage": "Samstag", "zeit": "nach Absprache, Teileannahme bis 11:00" }
+    ]
+  },
+  "hero": {
+    "kicker": "Freie Werkstatt für alle Fahrzeugmarken",
+    "titel": "Ehrliches Handwerk statt teurer Glaspalast.",
+    "text": "Wir sind zu fünft, wir haben keine Kaffeebar und keine Lounge. Was wir haben: eine Hebebühne mehr als nötig, Werkzeug, das was taugt, und die Angewohnheit, vor der Reparatur anzurufen, wenn es teurer wird als besprochen.",
+    "primaerButton": { "label": "Termin anfragen", "ziel": "#kontakt" },
+    "sekundaerButton": { "label": "Was wir machen", "ziel": "#leistungen" },
+    "bild": "https://placehold.co/1200x900/1c1917/f7f5f2?text=Werkstatthalle",
+    "bildAlt": "Blick in die Werkstatthalle mit zwei Hebebühnen",
+    "hinweise": [
+      "Kostenvoranschlag vorab – schriftlich",
+      "Ersatzwagen auf Wunsch, ohne Aufpreis",
+      "Reparatur nach Herstellervorgabe, Garantie bleibt erhalten"
+    ]
+  },
+  "leistungen": {
+    "kicker": "Leistungen",
+    "titel": "Das machen wir jeden Tag",
+    "text": "Kein Katalog mit 80 Positionen. Das hier sind die Arbeiten, die bei uns tatsächlich über die Bühne gehen – für alle Fahrzeugmarken, auch für Fahrzeuge mit ein paar Jahren auf dem Buckel.",
+    "eintraege": [
+      {
+        "titel": "Inspektion & Wartung",
+        "text": "Nach Herstellervorgabe, mit Eintrag ins Scheckheft. Die Herstellergarantie bleibt dabei bestehen – das ist seit 2003 so geregelt.",
+        "preisHinweis": "ab 149 €"
+      },
+      {
+        "titel": "HU & AU vorbereiten",
+        "text": "Prüfer kommt zweimal die Woche ins Haus. Wir schauen vorher drüber, damit Sie nicht wegen einer Standlichtbirne zweimal antanzen.",
+        "preisHinweis": "Vorabcheck 39 €"
+      },
+      {
+        "titel": "Bremsen & Fahrwerk",
+        "text": "Scheiben, Beläge, Stoßdämpfer, Achsvermessung. Wir zeigen Ihnen das alte Teil, bevor es in die Tonne wandert.",
+        "preisHinweis": "Kostenvoranschlag gratis"
+      },
+      {
+        "titel": "Fehlersuche & Diagnose",
+        "text": "Auslesen kann jeder. Wir nehmen uns die Zeit, dem Fehler bis zum Stecker nachzugehen, statt auf Verdacht Teile zu tauschen.",
+        "preisHinweis": "45 € je angefangene halbe Stunde"
+      },
+      {
+        "titel": "Klimaanlage",
+        "text": "Service, Dichtheitsprüfung, Befüllung – für R134a und R1234yf. Am besten im Frühjahr, bevor alle gleichzeitig kommen.",
+        "preisHinweis": "ab 89 €"
+      },
+      {
+        "titel": "Reifen & Einlagerung",
+        "text": "Wechsel, Wuchten, RDKS anlernen. Einlagerung im trockenen Nebenraum, acht Sätze passen noch rein.",
+        "preisHinweis": "Saison 39 €"
+      }
+    ]
+  },
+  "werkstatt": {
+    "kicker": "Der Laden",
+    "titel": "Zwei Hallen, fünf Leute, kein Schnickschnack",
+    "absaetze": [
+      "Die Halle an der Alten Zechenstraße war früher der Fuhrpark einer Spedition. Wir haben 2011 angefangen, das Dach neu gemacht, und seitdem Stück für Stück umgebaut – meistens im Winter, wenn weniger los ist.",
+      "Was wir bewusst nicht gemacht haben: einen Empfangstresen aus Glas. Wer reinkommt, steht direkt in der Halle und redet mit dem, der später auch an seinem Auto schraubt. Das spart uns beiden das Stille-Post-Spiel."
+    ],
+    "bild": "https://placehold.co/900x1100/44403c/f7f5f2?text=Hebeb%C3%BChne",
+    "bildAlt": "Fahrzeug auf der Hebebühne während einer Inspektion",
+    "zahlen": [
+      { "wert": "15", "label": "Jahre Meisterbetrieb" },
+      { "wert": "5", "label": "Leute im Team" },
+      { "wert": "2", "label": "Hebebühnen + Grube" }
+    ]
+  },
+  "team": {
+    "kicker": "Team",
+    "titel": "Wer bei uns schraubt",
+    "text": "Keine Stockfotos – die Bilder tauschen wir gegen echte, sobald der Fotograf da war.",
+    "mitglieder": [
+      {
+        "name": "Michael Brandner",
+        "rolle": "Kfz-Meister, Inhaber",
+        "text": "Hat die Werkstatt 2011 aufgemacht. Zuständig für Diagnose, Kostenvoranschläge und dafür, dass abends abgeschlossen wird.",
+        "bild": "https://placehold.co/600x600/1c1917/f7f5f2?text=Michael",
+        "bildAlt": "Porträt von Michael Brandner"
+      },
+      {
+        "name": "Sabine Brandner",
+        "rolle": "Büro & Terminplanung",
+        "text": "Nimmt das Telefon ab, schreibt die Rechnungen und sagt Ihnen ehrlich, wenn diese Woche wirklich nichts mehr frei ist.",
+        "bild": "https://placehold.co/600x600/44403c/f7f5f2?text=Sabine",
+        "bildAlt": "Porträt von Sabine Brandner"
+      },
+      {
+        "name": "Tarek Yildiz",
+        "rolle": "Kfz-Mechatroniker",
+        "text": "Seit 2016 dabei, kam als Geselle aus dem Nutzfahrzeugbereich. Fahrwerk, Bremsen, Achsvermessung.",
+        "bild": "https://placehold.co/600x600/57534e/f7f5f2?text=Tarek",
+        "bildAlt": "Porträt von Tarek Yildiz"
+      },
+      {
+        "name": "Jonas Peters",
+        "rolle": "Auszubildender, 3. Lehrjahr",
+        "text": "Macht Reifen, Ölservice und inzwischen auch Bremsen allein. Fragt viel, das ist gut so.",
+        "bild": "https://placehold.co/600x600/78716c/f7f5f2?text=Jonas",
+        "bildAlt": "Porträt von Jonas Peters"
+      }
+    ]
+  },
+  "ablauf": {
+    "kicker": "So läuft's",
+    "titel": "In 3 Schritten zum Termin",
+    "text": "Sie müssen kein Portal benutzen und keinen Account anlegen. Anrufen reicht.",
+    "schritte": [
+      {
+        "nummer": "01",
+        "titel": "Anrufen oder Formular schicken",
+        "text": "Sagen Sie uns, was das Auto macht – Geräusch, Warnleuchte, fälliger Service. Wenn Sie es nicht beschreiben können: auch gut, dafür sind wir da."
+      },
+      {
+        "nummer": "02",
+        "titel": "Wir schauen drauf und melden uns",
+        "text": "Bei planbaren Arbeiten bekommen Sie den Preis vorab. Kommt beim Schrauben etwas dazu, rufen wir an, bevor wir weitermachen. Ohne Rückruf keine Mehrkosten."
+      },
+      {
+        "nummer": "03",
+        "titel": "Abholen, alte Teile inklusive",
+        "text": "Wir gehen die Rechnung mit Ihnen durch und zeigen, was getauscht wurde. Die ausgebauten Teile können Sie mitnehmen, wenn Sie möchten."
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "Häufige Fragen",
+    "titel": "Was Kunden uns am Telefon fragen",
+    "eintraege": [
+      {
+        "frage": "Darf ich mein eigenes Öl mitbringen?",
+        "antwort": "Ja. Wir berechnen dann nur die Arbeitszeit und die Entsorgung des Altöls. Wichtig ist nur, dass die Freigabe des Herstellers zum Motor passt – bringen Sie den Kanister mit, wir schauen kurz auf das Etikett."
+      },
+      {
+        "frage": "Verliere ich die Herstellergarantie, wenn ich nicht zur Vertragswerkstatt gehe?",
+        "antwort": "Nein. Wir warten nach Herstellervorgabe, dokumentieren alles im Scheckheft und verbauen Teile in Erstausrüsterqualität. Damit bleibt die Garantie erhalten. Bei laufender Anschlussgarantie eines Händlers lohnt vorher ein Blick in die Bedingungen – wir helfen beim Lesen."
+      },
+      {
+        "frage": "Was kostet die Stunde bei Ihnen?",
+        "antwort": "90 € netto für Mechanik, 105 € netto für Diagnose- und Elektrikarbeiten. Keine versteckten Pauschalen, keine „Kleinteile-Zuschläge“ von 15 Prozent."
+      },
+      {
+        "frage": "Bekomme ich einen Ersatzwagen?",
+        "antwort": "Wir haben zwei Kleinwagen. Kostenlos für die Dauer der Reparatur, Sie zahlen nur den Sprit. Bitte bei der Terminvereinbarung mit ansagen, sie sind oft ausgebucht."
+      },
+      {
+        "frage": "Reparieren Sie auch ältere Fahrzeuge?",
+        "antwort": "Gerne. Ab etwa 15 Jahren sagen wir vorher ehrlich, ob sich die Reparatur noch rechnet. Manchmal ist die Antwort nein – dann sagen wir das auch, statt Ihnen 2.000 € in ein Auto zu stecken, das im Herbst durch die HU fällt."
+      },
+      {
+        "frage": "Kann ich mein Auto abends abstellen?",
+        "antwort": "Ja. Der Schlüsselbriefkasten ist links neben dem Rolltor. Zettel mit Name, Telefonnummer und Auftrag dazu, dann steht das Auto morgens um halb acht drin."
+      }
+    ]
+  },
+  "kontakt": {
+    "kicker": "Kontakt",
+    "titel": "Termin? Am schnellsten geht das Telefon.",
+    "text": "Wir sitzen nicht den ganzen Tag im Büro. Wenn niemand rangeht, sprechen Sie bitte auf – wir rufen am selben Tag zurück.",
+    "formularHinweis": "Das Formular ist im Demo-Betrieb: Ihre Eingaben werden nicht verschickt und nicht gespeichert."
+  }
+}

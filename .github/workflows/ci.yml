@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Bei schnell aufeinanderfolgenden Pushes laeuft nur der neueste Job weiter.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Linten
+        run: npm run lint
+
+      # Bewusst "next build" ohne Tina: der Build muss auch ohne
+      # NEXT_PUBLIC_TINA_CLIENT_ID und TINA_TOKEN durchlaufen.
+      # Die Typpruefung ist hier enthalten – ein separates "tsc --noEmit"
+      # wuerde vorher fehlschlagen, weil Next.js Typen wie LayoutProps
+      # erst waehrend des Builds nach .next/types generiert.
+      - name: Bauen
+        run: npm run build

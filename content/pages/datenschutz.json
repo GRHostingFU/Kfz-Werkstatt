@@ -1,0 +1,73 @@
+{
+  "titel": "Datenschutzerklärung",
+  "einleitung": "Informationen zur Verarbeitung personenbezogener Daten nach Art. 13 DSGVO.",
+  "warnung": "Achtung: Dies ist eine Demo-Seite. Der Text beschreibt den tatsächlichen technischen Stand dieser Demo, ersetzt aber keine rechtliche Prüfung. Vor einem echten Livegang bitte an den realen Betrieb anpassen und prüfen lassen.",
+  "abschnitte": [
+    {
+      "titel": "1. Verantwortlicher",
+      "absaetze": [
+        "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
+        "Kfz-Werkstatt Brandner e. K., Inhaber Michael Brandner, Alte Zechenstraße 14, 45721 Lohberg, Telefon 0 23 64 / 88 21 40, E-Mail werkstatt@brandner-kfz.example.",
+        "Ein Datenschutzbeauftragter ist nicht bestellt, da die gesetzlichen Voraussetzungen hierfür nicht vorliegen."
+      ]
+    },
+    {
+      "titel": "2. Was diese Website nicht tut",
+      "absaetze": [
+        "Diese Website setzt keine Cookies. Es gibt kein Analyse-Werkzeug, kein Tracking, keine Werbenetzwerke, keine Social-Media-Plugins und keine eingebetteten Karten oder Videos.",
+        "Es werden keine externen Schriftarten geladen. Alle Texte werden mit den Schriften dargestellt, die ohnehin auf Ihrem Gerät installiert sind – es findet also kein Verbindungsaufbau zu Schriftanbietern statt.",
+        "Da keine nicht notwendigen Cookies oder vergleichbaren Techniken zum Einsatz kommen, ist nach § 25 TDDDG keine Einwilligung erforderlich. Ein Cookie-Banner entfällt deshalb bewusst."
+      ]
+    },
+    {
+      "titel": "3. Server-Logdateien",
+      "absaetze": [
+        "Beim Aufruf der Website übermittelt Ihr Browser technisch notwendige Daten, die der Hosting-Anbieter in Logdateien speichert: aufgerufene Adresse, Datum und Uhrzeit, übertragene Datenmenge, Browsertyp und Betriebssystem, Referrer sowie die IP-Adresse.",
+        "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im sicheren und störungsfreien Betrieb der Website. Eine Zusammenführung dieser Daten mit anderen Datenquellen findet nicht statt.",
+        "Die Logdaten werden nach kurzer Zeit automatisch gelöscht, sofern sie nicht ausnahmsweise zur Aufklärung eines Sicherheitsvorfalls benötigt werden."
+      ]
+    },
+    {
+      "titel": "4. Hosting",
+      "absaetze": [
+        "Die Website wird bei einem externen Dienstleister gehostet (Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA). Der Anbieter verarbeitet die oben genannten Server-Logdaten in unserem Auftrag.",
+        "Mit dem Anbieter besteht ein Vertrag über die Auftragsverarbeitung nach Art. 28 DSGVO. Für Übermittlungen in die USA stützt sich der Anbieter auf die Standardvertragsklauseln der EU-Kommission sowie auf seine Zertifizierung nach dem EU-US Data Privacy Framework."
+      ]
+    },
+    {
+      "titel": "5. Platzhalter-Bilder",
+      "absaetze": [
+        "Die Bilder dieser Demo-Seite werden über den Dienst placehold.co eingebunden. Beim Aufruf der Seite kann dabei Ihre IP-Adresse an diesen Anbieter übermittelt werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (Darstellung der Demo-Seite).",
+        "Im produktiven Betrieb werden diese Platzhalter durch eigene Fotos ersetzt, die direkt von unserem Server ausgeliefert werden. Damit entfällt diese Übermittlung."
+      ]
+    },
+    {
+      "titel": "6. Kontaktformular",
+      "absaetze": [
+        "Das Formular auf dieser Seite ist eine reine Demonstration. Ihre Eingaben werden ausschließlich im Browser angezeigt, nicht an einen Server gesendet und nicht gespeichert.",
+        "Sobald das Formular produktiv geschaltet wird, verarbeiten wir die von Ihnen angegebenen Daten (Name, Telefonnummer, Fahrzeug, Anliegen) allein zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist dann Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen Maßnahmen, ansonsten Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen."
+      ]
+    },
+    {
+      "titel": "7. Kontakt per Telefon oder E-Mail",
+      "absaetze": [
+        "Wenn Sie uns anrufen oder schreiben, verarbeiten wir Ihre Angaben zur Bearbeitung des Anliegens. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit es um die Anbahnung oder Durchführung eines Auftrags geht, sonst Art. 6 Abs. 1 lit. f DSGVO.",
+        "Auftragsbezogene Unterlagen bewahren wir im Rahmen der handels- und steuerrechtlichen Fristen auf (in der Regel sechs bzw. zehn Jahre)."
+      ]
+    },
+    {
+      "titel": "8. Ihre Rechte",
+      "absaetze": [
+        "Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie das Recht, einer Verarbeitung auf Grundlage berechtigter Interessen zu widersprechen (Art. 21 DSGVO).",
+        "Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Für die Ausübung Ihrer Rechte genügt eine formlose Nachricht an die oben genannten Kontaktdaten.",
+        "Unabhängig davon steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu, in der Regel bei der Behörde Ihres Wohnorts oder unseres Betriebssitzes."
+      ]
+    },
+    {
+      "titel": "9. Verschlüsselung",
+      "absaetze": [
+        "Diese Website wird ausschließlich über eine verschlüsselte HTTPS-Verbindung ausgeliefert. Sie erkennen das an dem Schloss-Symbol in der Adresszeile Ihres Browsers."
+      ]
+    }
+  ]
+}

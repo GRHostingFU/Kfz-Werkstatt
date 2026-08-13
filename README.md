@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kfz-Werkstatt – Demo-Website
 
-## Getting Started
+Test-Website für eine freie Kfz-Werkstatt. Next.js (App Router) + Tailwind CSS v4 + TinaCMS.
 
-First, run the development server:
+## Schnellstart
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # nur die Website        -> http://localhost:3000
+npm run dev:tina     # Website + Live-Editor  -> http://localhost:3000/admin
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Struktur
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/                 layout.tsx, page.tsx, globals.css
+                     impressum/, datenschutz/
+components/          Header, Hero, Leistungen, Werkstatt, Team,
+                     Ablauf, Faq, Kontakt, TerminFormular, Footer
+content/pages/       home.json – alle Texte und Bilder der Startseite
+                     impressum.json, datenschutz.json
+lib/content.ts       typisierter Zugriff auf den Inhalt
+tina/config.ts       TinaCMS-Collections für den Editor
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Die gesamte Startseite wird aus `content/pages/home.json` gerendert. Wer im
+Editor speichert, ändert diese Datei – daraus baut Next.js beim nächsten
+Deploy wieder eine statische Seite.
 
-## Learn More
+## TinaCMS einrichten
 
-To learn more about Next.js, take a look at the following resources:
+1. Projekt auf [app.tina.io](https://app.tina.io) anlegen, Repository verbinden.
+2. `.env.example` nach `.env` kopieren und ausfüllen:
+   - `NEXT_PUBLIC_TINA_CLIENT_ID`
+   - `TINA_TOKEN`
+   - `NEXT_PUBLIC_TINA_BRANCH` (optional, Standard `main`)
+3. Lokal `npm run dev:tina` starten, Editor unter `/admin`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ohne Credentials läuft der Editor lokal im Dateisystem-Modus – die Website
+selbst funktioniert in jedem Fall, auch ganz ohne Tina.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment auf Vercel
 
-## Deploy on Vercel
+Repository importieren, fertig – das Standard-Build-Kommando `npm run build`
+(= `next build`) braucht keine Umgebungsvariablen und läuft beim ersten
+Versuch durch.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Sobald die Tina-Credentials in den Vercel-Projekt-Einstellungen hinterlegt
+sind, kann das Build-Kommando auf `npm run build:tina` umgestellt werden –
+dann wird der Editor mit nach `/admin` deployt.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Bewusste Entscheidungen
+
+- **Keine externen Schriften, keine Tracker.** Ausschließlich System-Fonts,
+  konfiguriert in `app/globals.css`. Damit gibt es keine Requests zu Dritten.
+- **Keine Markennamen.** Es ist durchgehend von „alle Fahrzeugmarken“ die Rede.
+- **Platzhalterbilder** kommen von `placehold.co` (freigegeben in
+  `next.config.ts`). Echte Fotos später über den Tina-Media-Manager ersetzen.
+- **Performance:** alles serverseitig gerendert, Client-JS nur im Mobilmenü und
+  im Formular. Die FAQ nutzt natives `<details>`, Bilder laufen über
+  `next/image` mit festen Seitenverhältnissen (kein CLS).
+- **`prefers-reduced-motion`** wird respektiert.
+
+## Rechtstexte
+
+Impressum (`/impressum`) und Datenschutzerklärung (`/datenschutz`) liegen als
+`content/pages/impressum.json` bzw. `datenschutz.json` und sind über den Tina-
+Editor unter „Rechtstexte“ bearbeitbar. Beide Seiten sind über `robots: noindex`
+von der Indexierung ausgenommen, solange die Angaben erfunden sind.
+
+Der Datenschutztext beschreibt den tatsächlichen Stand dieser Demo: keine
+Cookies, kein Tracking, keine externen Schriften, deshalb bewusst kein
+Cookie-Banner. Sobald echte Dienste dazukommen (Karte, Analyse, Formular-
+Versand), muss der Text ergänzt werden.
+
+## Noch offen für einen echten Livegang
+
+- Angaben in Impressum und Datenschutzerklärung durch die echten Daten
+  ersetzen und juristisch prüfen lassen. Die Texte sind Vorlagen, keine
+  Rechtsberatung.
+- Das Kontaktformular ist eine Demo: es verschickt und speichert nichts.
+- Adresse, Telefonnummer, Preise und Team sind erfunden.

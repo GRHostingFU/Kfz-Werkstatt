@@ -1,0 +1,64 @@
+{
+  "titel": "Impressum",
+  "einleitung": "Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz) und § 18 Abs. 2 MStV.",
+  "warnung": "Achtung: Dies ist eine Demo-Seite. Sämtliche Angaben sind erfunden und müssen vor einem echten Livegang durch die tatsächlichen Daten des Betriebs ersetzt werden.",
+  "abschnitte": [
+    {
+      "titel": "Diensteanbieter",
+      "absaetze": [
+        "Kfz-Werkstatt Brandner e. K.",
+        "Inhaber: Michael Brandner",
+        "Alte Zechenstraße 14",
+        "45721 Lohberg"
+      ]
+    },
+    {
+      "titel": "Kontakt",
+      "absaetze": [
+        "Telefon: 0 23 64 / 88 21 40",
+        "E-Mail: werkstatt@brandner-kfz.example"
+      ]
+    },
+    {
+      "titel": "Registereintrag",
+      "absaetze": [
+        "Eingetragen im Handelsregister des Amtsgerichts Musterstadt, HRA 00000.",
+        "Eingetragen in der Handwerksrolle der Handwerkskammer Musterstadt."
+      ]
+    },
+    {
+      "titel": "Umsatzsteuer-Identifikationsnummer",
+      "absaetze": [
+        "USt-IdNr. gemäß § 27 a Umsatzsteuergesetz: DE000000000"
+      ]
+    },
+    {
+      "titel": "Berufsrechtliche Angaben",
+      "absaetze": [
+        "Berufsbezeichnung: Kraftfahrzeugtechniker-Handwerk (verliehen in der Bundesrepublik Deutschland).",
+        "Zuständige Kammer: Handwerkskammer Musterstadt, Musterallee 1, 00000 Musterstadt.",
+        "Es gelten die Handwerksordnung (HwO) sowie die Berufsordnung der zuständigen Handwerkskammer. Die Regelungen sind einsehbar unter www.gesetze-im-internet.de sowie bei der zuständigen Kammer."
+      ]
+    },
+    {
+      "titel": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+      "absaetze": [
+        "Michael Brandner, Anschrift wie oben."
+      ]
+    },
+    {
+      "titel": "Verbraucherstreitbeilegung",
+      "absaetze": [
+        "Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+        "Hinweis: Die Plattform der EU-Kommission zur Online-Streitbeilegung wurde zum 20. Juli 2025 eingestellt; ein Link darauf ist nicht mehr erforderlich."
+      ]
+    },
+    {
+      "titel": "Haftung für Inhalte und Links",
+      "absaetze": [
+        "Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+        "Für Inhalte externer Links ist stets der jeweilige Anbieter der verlinkten Seiten verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Bei Bekanntwerden von Rechtsverletzungen entfernen wir solche Links umgehend."
+      ]
+    }
+  ]
+}
