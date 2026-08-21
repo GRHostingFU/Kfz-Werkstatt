@@ -53,6 +53,11 @@ Sobald die Tina-Credentials in den Vercel-Projekt-Einstellungen hinterlegt
 sind, kann das Build-Kommando auf `npm run build:tina` umgestellt werden –
 dann wird der Editor mit nach `/admin` deployt.
 
+`build:tina` läuft über `scripts/build-tina.mjs`. Auf Vorschau-Deployments
+überspringt es die TinaCloud-Prüfung, weil dort meist ein Feature-Branch
+gebaut wird und TinaCloud nur indexierte Branches kennt – sonst wäre jede
+Vorschau rot. In der Produktion bleibt die Prüfung aktiv.
+
 ## Bewusste Entscheidungen
 
 - **Keine externen Schriften, keine Tracker.** Ausschließlich System-Fonts,
