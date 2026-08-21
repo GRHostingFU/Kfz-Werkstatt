@@ -1,0 +1,130 @@
+{
+  "seo": {
+    "title": "Kfz-Werkstatt Brandner – Meisterbetrieb in Lohberg",
+    "description": "Freie Kfz-Werkstatt in Lohberg. Inspektion, HU-Vorbereitung, Reparatur für alle Fahrzeugmarken. Familienbetrieb mit Meisterbrief, feste Preise, ehrliche Ansagen."
+  },
+  "bloecke": [
+    {
+      "_template": "hero",
+      "kicker": "Freie Werkstatt für alle Fahrzeugmarken",
+      "titel": "Ehrliches Handwerk statt teurer Glaspalast.",
+      "text": "Wir sind zu fünft, wir haben keine Kaffeebar und keine Lounge. Was wir haben: eine Hebebühne mehr als nötig, Werkzeug, das was taugt, und die Angewohnheit, vor der Reparatur anzurufen, wenn es teurer wird als besprochen.",
+      "primaerButton": {
+        "label": "Termin anfragen",
+        "ziel": "/kontakt"
+      },
+      "sekundaerButton": {
+        "label": "Was wir machen",
+        "ziel": "/leistungen"
+      },
+      "bild": "/uploads/bilder/werkstatt-halle.svg",
+      "bildAlt": "Illustration der Werkstatthalle mit Hebebühne, Werkzeugwand und Werkbank",
+      "hinweise": [
+        "Kostenvoranschlag vorab – schriftlich",
+        "Ersatzwagen auf Wunsch, ohne Aufpreis",
+        "Reparatur nach Herstellervorgabe, Garantie bleibt erhalten"
+      ]
+    },
+    {
+      "_template": "wegweiser",
+      "ueberschrift": "Wo möchten Sie hin?",
+      "karten": [
+        {
+          "titel": "Leistungen",
+          "text": "Was wir machen, was es kostet und was wir bewusst nicht anbieten.",
+          "hinweis": "6 Bereiche",
+          "ziel": "/leistungen"
+        },
+        {
+          "titel": "Werkstatt & Team",
+          "text": "Wer hier schraubt, wie die Halle aussieht und wie wir dazu gekommen sind.",
+          "hinweis": "5 Leute",
+          "ziel": "/werkstatt"
+        },
+        {
+          "titel": "Ablauf & Fragen",
+          "text": "In drei Schritten zum Termin – und die Antworten auf die häufigsten Fragen.",
+          "hinweis": "6 Antworten",
+          "ziel": "/ablauf"
+        },
+        {
+          "titel": "Kontakt",
+          "text": "Telefon, Öffnungszeiten, Anfahrt und das Formular für die Terminanfrage.",
+          "hinweis": "Rückruf am selben Tag",
+          "ziel": "/kontakt"
+        }
+      ]
+    },
+    {
+      "_template": "leistungen",
+      "kicker": "Leistungen",
+      "titel": "Das machen wir jeden Tag",
+      "text": "Kein Katalog mit 80 Positionen. Das hier sind die Arbeiten, die bei uns tatsächlich über die Bühne gehen – für alle Fahrzeugmarken, auch für Fahrzeuge mit ein paar Jahren auf dem Buckel.",
+      "eintraege": [
+        {
+          "titel": "Inspektion & Wartung",
+          "text": "Nach Herstellervorgabe, mit Eintrag ins Scheckheft. Die Herstellergarantie bleibt dabei bestehen – das ist seit 2003 so geregelt.",
+          "preisHinweis": "ab 149 €"
+        },
+        {
+          "titel": "HU & AU vorbereiten",
+          "text": "Prüfer kommt zweimal die Woche ins Haus. Wir schauen vorher drüber, damit Sie nicht wegen einer Standlichtbirne zweimal antanzen.",
+          "preisHinweis": "Vorabcheck 39 €"
+        },
+        {
+          "titel": "Bremsen & Fahrwerk",
+          "text": "Scheiben, Beläge, Stoßdämpfer, Achsvermessung. Wir zeigen Ihnen das alte Teil, bevor es in die Tonne wandert.",
+          "preisHinweis": "Kostenvoranschlag gratis"
+        },
+        {
+          "titel": "Fehlersuche & Diagnose",
+          "text": "Auslesen kann jeder. Wir nehmen uns die Zeit, dem Fehler bis zum Stecker nachzugehen, statt auf Verdacht Teile zu tauschen.",
+          "preisHinweis": "45 € je angefangene halbe Stunde"
+        },
+        {
+          "titel": "Klimaanlage",
+          "text": "Service, Dichtheitsprüfung, Befüllung – für R134a und R1234yf. Am besten im Frühjahr, bevor alle gleichzeitig kommen.",
+          "preisHinweis": "ab 89 €"
+        },
+        {
+          "titel": "Reifen & Einlagerung",
+          "text": "Wechsel, Wuchten, RDKS anlernen. Einlagerung im trockenen Nebenraum, acht Sätze passen noch rein.",
+          "preisHinweis": "Saison 39 €"
+        }
+      ],
+      "grenze": 3,
+      "mitKopf": true
+    },
+    {
+      "_template": "ablauf",
+      "kicker": "So läuft's",
+      "titel": "In 3 Schritten zum Termin",
+      "text": "Sie müssen kein Portal benutzen und keinen Account anlegen. Anrufen reicht.",
+      "schritte": [
+        {
+          "nummer": "01",
+          "titel": "Anrufen oder Formular schicken",
+          "text": "Sagen Sie uns, was das Auto macht – Geräusch, Warnleuchte, fälliger Service. Wenn Sie es nicht beschreiben können: auch gut, dafür sind wir da."
+        },
+        {
+          "nummer": "02",
+          "titel": "Wir schauen drauf und melden uns",
+          "text": "Bei planbaren Arbeiten bekommen Sie den Preis vorab. Kommt beim Schrauben etwas dazu, rufen wir an, bevor wir weitermachen. Ohne Rückruf keine Mehrkosten."
+        },
+        {
+          "nummer": "03",
+          "titel": "Abholen, alte Teile inklusive",
+          "text": "Wir gehen die Rechnung mit Ihnen durch und zeigen, was getauscht wurde. Die ausgebauten Teile können Sie mitnehmen, wenn Sie möchten."
+        }
+      ],
+      "mitKopf": true
+    },
+    {
+      "_template": "schluss",
+      "titel": "Auto macht Geräusche? Rufen Sie durch.",
+      "text": "Wenn niemand rangeht, sprechen Sie bitte auf – wir rufen am selben Tag zurück.",
+      "buttonLabel": "Formular ausfüllen",
+      "buttonZiel": "/kontakt"
+    }
+  ]
+}

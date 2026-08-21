@@ -3,17 +3,18 @@ import { spawnSync } from "node:child_process";
 /*
  * Baut Tina und danach Next.
  *
- * TinaCloud kennt nur Branches, die dort indexiert sind – in der Regel nur
- * `main`. Auf Vorschau-Deployments (Feature-Branches) wuerde `tinacms build`
- * deshalb mit "Branch is not on TinaCloud" abbrechen und die ganze Vorschau
- * rot faerben. Dort ueberspringen wir die Cloud-Pruefung: der Editor ist in
- * der Vorschau ohnehin nicht das Ziel, die Seite selbst wird trotzdem korrekt
- * gebaut. In der Produktion bleibt die Pruefung aktiv.
+ * Die Cloud-Pruefung laeuft nur in der Produktion. Ueberall sonst wird sie
+ * uebersprungen:
+ *
+ * - Vorschau-Deployments bauen einen Feature-Branch, den TinaCloud nicht
+ *   indexiert hat – die Pruefung wuerde jede Vorschau rot faerben.
+ * - In der CI gibt es bewusst keine Tina-Zugangsdaten. Der Schritt erzeugt
+ *   dort nur den GraphQL-Client, damit `next build` uebersetzen kann.
  */
-const vorschau = process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production";
+const produktion = process.env.VERCEL_ENV === "production";
 
 const schritte = [
-  ["tinacms", vorschau ? ["build", "--skip-cloud-checks"] : ["build"]],
+  ["tinacms", produktion ? ["build"] : ["build", "--skip-cloud-checks"]],
   ["next", ["build"]],
 ];
 

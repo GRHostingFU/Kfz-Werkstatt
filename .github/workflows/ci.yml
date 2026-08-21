@@ -29,10 +29,15 @@ jobs:
       - name: Linten
         run: npm run lint
 
-      # Bewusst "next build" ohne Tina: der Build muss auch ohne
-      # NEXT_PUBLIC_TINA_CLIENT_ID und TINA_TOKEN durchlaufen.
-      # Die Typpruefung ist hier enthalten – ein separates "tsc --noEmit"
-      # wuerde vorher fehlschlagen, weil Next.js Typen wie LayoutProps
-      # erst waehrend des Builds nach .next/types generiert.
+      # build:tina erzeugt zuerst den GraphQL-Client (den die Seiten
+      # importieren) und baut dann Next. Ohne echte Tina-Zugangsdaten
+      # schlaegt die Abfrage an TinaCloud fehl – die Seiten fallen dann auf
+      # die JSON-Dateien im Repo zurueck, der Build laeuft also durch.
+      # Die Typpruefung steckt in "next build"; ein separates "tsc --noEmit"
+      # wuerde vorher fehlschlagen, weil Next.js Typen wie LayoutProps erst
+      # waehrend des Builds nach .next/types schreibt.
       - name: Bauen
-        run: npm run build
+        run: npm run build:tina
+        env:
+          NEXT_PUBLIC_TINA_CLIENT_ID: ci
+          TINA_TOKEN: ci

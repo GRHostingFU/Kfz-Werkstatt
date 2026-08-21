@@ -1,0 +1,48 @@
+{
+  "design": {
+    "palette": "werkstatt"
+  },
+  "betrieb": {
+    "name": "Kfz-Werkstatt Brandner",
+    "claim": "Meisterbetrieb seit 20 Jahren",
+    "telefon": "0 23 64 / 88 21 40",
+    "email": "werkstatt@brandner-kfz.example",
+    "strasse": "Alte Zechenstraße 14",
+    "ort": "45721 Lohberg",
+    "oeffnungszeiten": [
+      {
+        "tage": "Montag – Donnerstag",
+        "zeit": "07:30 – 17:00 Uhr"
+      },
+      {
+        "tage": "Freitag",
+        "zeit": "07:30 – 14:00 Uhr"
+      },
+      {
+        "tage": "Samstag",
+        "zeit": "nach Absprache, Teileannahme bis 11:00"
+      }
+    ]
+  },
+  "navigation": [
+    {
+      "label": "Leistungen",
+      "ziel": "/leistungen"
+    },
+    {
+      "label": "Werkstatt & Team",
+      "ziel": "/werkstatt"
+    },
+    {
+      "label": "Ablauf & Fragen",
+      "ziel": "/ablauf"
+    },
+    {
+      "label": "Kontakt",
+      "ziel": "/kontakt"
+    }
+  ],
+  "fusszeile": {
+    "hinweis": "Demo-Seite ohne Tracking, ohne Cookies, ohne externe Schriftarten."
+  }
+}

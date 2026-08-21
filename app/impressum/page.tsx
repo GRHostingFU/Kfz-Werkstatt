@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import Rechtstext from "@/components/Rechtstext";
-import { getRechtstext } from "@/lib/content";
-
-const inhalt = getRechtstext("impressum");
+import { ladeRechtstext } from "@/lib/rechtstexte";
 
 export const metadata: Metadata = {
-  title: inhalt.titel,
-  description: inhalt.einleitung,
+  title: "Impressum",
   robots: { index: false },
 };
 
-export default function ImpressumSeite() {
-  return <Rechtstext inhalt={inhalt} />;
+export default async function ImpressumSeite() {
+  const anfrage = await ladeRechtstext("impressum");
+  return <Rechtstext anfrage={anfrage} />;
 }

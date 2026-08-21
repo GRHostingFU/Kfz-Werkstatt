@@ -1,4 +1,5 @@
 import { defineConfig } from "tinacms";
+import { bloecke } from "./bloecke";
 
 // Branch, in den der Editor speichert. Auf Vercel liefert Git automatisch
 // den passenden Wert, lokal fallen wir auf "main" zurueck.
@@ -29,23 +30,23 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "startseite",
-        label: "Startseite",
-        path: "content/pages",
+        name: "seite",
+        label: "Seiten",
+        path: "content/seiten",
         format: "json",
-        match: { include: "home" },
         ui: {
-          // Eine einzelne Seite: kein Anlegen/Loeschen im Editor.
           allowedActions: { create: false, delete: false },
-          // Bewusst kein `router`: der wuerde den Editor in die visuelle
-          // Ansicht schicken, die ohne useTina in den Komponenten keine
-          // Felder anzeigt. Ohne ihn oeffnet sich direkt das Formular.
+          // Zeigt die passende Seite in der Vorschau neben dem Formular.
+          router: (props) =>
+            props.document._sys.filename === "home"
+              ? "/"
+              : `/${props.document._sys.filename}`,
         },
         fields: [
           {
             type: "object",
             name: "seo",
-            label: "SEO / Browser-Tab",
+            label: "Browser-Tab und Suchmaschine",
             fields: [
               { type: "string", name: "title", label: "Seitentitel" },
               {
@@ -58,8 +59,49 @@ export default defineConfig({
           },
           {
             type: "object",
+            name: "bloecke",
+            label: "Abschnitte",
+            list: true,
+            templates: bloecke,
+          },
+        ],
+      },
+      {
+        name: "einstellungen",
+        label: "Einstellungen",
+        path: "content/einstellungen",
+        format: "json",
+        ui: {
+          allowedActions: { create: false, delete: false },
+          router: () => "/",
+        },
+        fields: [
+          {
+            type: "object",
+            name: "design",
+            label: "Aussehen",
+            fields: [
+              {
+                type: "string",
+                name: "palette",
+                label: "Farbwelt",
+                description:
+                  "Gilt für die ganze Website, jeweils abgestimmt für helle und dunkle Ansicht.",
+                options: [
+                  { value: "werkstatt", label: "Werkstatt – warmes Braun mit Rost" },
+                  { value: "stahl", label: "Stahl – Graublau mit kräftigem Blau" },
+                  { value: "wald", label: "Wald – Salbei mit Tannengrün" },
+                  { value: "signal", label: "Signal – Anthrazit mit Gelb" },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
             name: "betrieb",
             label: "Betriebsdaten",
+            description:
+              "Erscheinen im Kopf, im Fuß und auf der Kontaktseite gleichzeitig.",
             fields: [
               { type: "string", name: "name", label: "Name der Werkstatt" },
               { type: "string", name: "claim", label: "Untertitel / Claim" },
@@ -72,9 +114,7 @@ export default defineConfig({
                 name: "oeffnungszeiten",
                 label: "Öffnungszeiten",
                 list: true,
-                ui: {
-                  itemProps: (item) => ({ label: item?.tage }),
-                },
+                ui: { itemProps: (item) => ({ label: item?.tage }) },
                 fields: [
                   { type: "string", name: "tage", label: "Tage" },
                   { type: "string", name: "zeit", label: "Uhrzeit" },
@@ -84,232 +124,24 @@ export default defineConfig({
           },
           {
             type: "object",
-            name: "hero",
-            label: "Kopfbereich",
+            name: "navigation",
+            label: "Navigation",
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.label }) },
             fields: [
-              { type: "string", name: "kicker", label: "Überzeile" },
-              { type: "string", name: "titel", label: "Überschrift" },
-              {
-                type: "string",
-                name: "text",
-                label: "Einleitungstext",
-                ui: { component: "textarea" },
-              },
-              {
-                type: "object",
-                name: "primaerButton",
-                label: "Haupt-Button",
-                fields: [
-                  { type: "string", name: "label", label: "Beschriftung" },
-                  { type: "string", name: "ziel", label: "Ziel (z. B. #kontakt)" },
-                ],
-              },
-              {
-                type: "object",
-                name: "sekundaerButton",
-                label: "Zweiter Button",
-                fields: [
-                  { type: "string", name: "label", label: "Beschriftung" },
-                  { type: "string", name: "ziel", label: "Ziel (z. B. #leistungen)" },
-                ],
-              },
-              { type: "image", name: "bild", label: "Bild" },
-              { type: "string", name: "bildAlt", label: "Bildbeschreibung (Alt-Text)" },
-              {
-                type: "string",
-                name: "hinweise",
-                label: "Kurze Versprechen",
-                list: true,
-              },
+              { type: "string", name: "label", label: "Beschriftung" },
+              { type: "string", name: "ziel", label: "Ziel (z. B. /leistungen)" },
             ],
           },
           {
             type: "object",
-            name: "leistungen",
-            label: "Leistungen",
+            name: "fusszeile",
+            label: "Fußzeile",
             fields: [
-              { type: "string", name: "kicker", label: "Überzeile" },
-              { type: "string", name: "titel", label: "Überschrift" },
               {
                 type: "string",
-                name: "text",
-                label: "Einleitung",
-                ui: { component: "textarea" },
-              },
-              {
-                type: "object",
-                name: "eintraege",
-                label: "Einzelne Leistungen",
-                list: true,
-                ui: {
-                  itemProps: (item) => ({ label: item?.titel }),
-                },
-                fields: [
-                  { type: "string", name: "titel", label: "Titel" },
-                  {
-                    type: "string",
-                    name: "text",
-                    label: "Beschreibung",
-                    ui: { component: "textarea" },
-                  },
-                  {
-                    type: "string",
-                    name: "preisHinweis",
-                    label: "Preishinweis (optional)",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "werkstatt",
-            label: "Über die Werkstatt",
-            fields: [
-              { type: "string", name: "kicker", label: "Überzeile" },
-              { type: "string", name: "titel", label: "Überschrift" },
-              {
-                type: "string",
-                name: "absaetze",
-                label: "Absätze",
-                list: true,
-                ui: { component: "textarea" },
-              },
-              { type: "image", name: "bild", label: "Bild" },
-              { type: "string", name: "bildAlt", label: "Bildbeschreibung (Alt-Text)" },
-              {
-                type: "object",
-                name: "zahlen",
-                label: "Zahlen",
-                list: true,
-                ui: {
-                  itemProps: (item) => ({ label: item?.label }),
-                },
-                fields: [
-                  { type: "string", name: "wert", label: "Wert" },
-                  { type: "string", name: "label", label: "Bezeichnung" },
-                ],
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "team",
-            label: "Team",
-            fields: [
-              { type: "string", name: "kicker", label: "Überzeile" },
-              { type: "string", name: "titel", label: "Überschrift" },
-              {
-                type: "string",
-                name: "text",
-                label: "Nebentext",
-                ui: { component: "textarea" },
-              },
-              {
-                type: "object",
-                name: "mitglieder",
-                label: "Mitarbeiter",
-                list: true,
-                ui: {
-                  itemProps: (item) => ({ label: item?.name }),
-                },
-                fields: [
-                  { type: "string", name: "name", label: "Name" },
-                  { type: "string", name: "rolle", label: "Funktion" },
-                  {
-                    type: "string",
-                    name: "text",
-                    label: "Kurzbeschreibung",
-                    ui: { component: "textarea" },
-                  },
-                  { type: "image", name: "bild", label: "Foto" },
-                  {
-                    type: "string",
-                    name: "bildAlt",
-                    label: "Bildbeschreibung (Alt-Text)",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "ablauf",
-            label: "Ablauf / 3 Schritte",
-            fields: [
-              { type: "string", name: "kicker", label: "Überzeile" },
-              { type: "string", name: "titel", label: "Überschrift" },
-              {
-                type: "string",
-                name: "text",
-                label: "Einleitung",
-                ui: { component: "textarea" },
-              },
-              {
-                type: "object",
-                name: "schritte",
-                label: "Schritte",
-                list: true,
-                ui: {
-                  itemProps: (item) => ({ label: item?.titel }),
-                },
-                fields: [
-                  { type: "string", name: "nummer", label: "Nummer" },
-                  { type: "string", name: "titel", label: "Titel" },
-                  {
-                    type: "string",
-                    name: "text",
-                    label: "Beschreibung",
-                    ui: { component: "textarea" },
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "faq",
-            label: "Häufige Fragen",
-            fields: [
-              { type: "string", name: "kicker", label: "Überzeile" },
-              { type: "string", name: "titel", label: "Überschrift" },
-              {
-                type: "object",
-                name: "eintraege",
-                label: "Fragen",
-                list: true,
-                ui: {
-                  itemProps: (item) => ({ label: item?.frage }),
-                },
-                fields: [
-                  { type: "string", name: "frage", label: "Frage" },
-                  {
-                    type: "string",
-                    name: "antwort",
-                    label: "Antwort",
-                    ui: { component: "textarea" },
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "kontakt",
-            label: "Kontakt",
-            fields: [
-              { type: "string", name: "kicker", label: "Überzeile" },
-              { type: "string", name: "titel", label: "Überschrift" },
-              {
-                type: "string",
-                name: "text",
-                label: "Text",
-                ui: { component: "textarea" },
-              },
-              {
-                type: "string",
-                name: "formularHinweis",
-                label: "Hinweis unter dem Formular",
+                name: "hinweis",
+                label: "Hinweistext",
                 ui: { component: "textarea" },
               },
             ],
@@ -324,6 +156,7 @@ export default defineConfig({
         match: { include: "{impressum,datenschutz}" },
         ui: {
           allowedActions: { create: false, delete: false },
+          router: (props) => `/${props.document._sys.filename}`,
         },
         fields: [
           { type: "string", name: "titel", label: "Überschrift" },
@@ -344,9 +177,7 @@ export default defineConfig({
             name: "abschnitte",
             label: "Abschnitte",
             list: true,
-            ui: {
-              itemProps: (item) => ({ label: item?.titel }),
-            },
+            ui: { itemProps: (item) => ({ label: item?.titel }) },
             fields: [
               { type: "string", name: "titel", label: "Titel" },
               {
@@ -354,7 +185,6 @@ export default defineConfig({
                 name: "absaetze",
                 label: "Absätze",
                 list: true,
-                ui: { component: "textarea" },
               },
             ],
           },

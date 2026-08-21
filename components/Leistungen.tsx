@@ -1,46 +1,44 @@
 import Link from "next/link";
 import { Blockkopf } from "./Abschnitt";
-import type { HomeContent } from "@/lib/content";
+import type { LeistungsEintrag, Text } from "./typen";
 
 export default function Leistungen({
-  leistungen,
-  kopf = true,
-  grenze = 0,
+  kicker,
+  titel,
+  text,
+  eintraege,
+  mitKopf,
+  grenze,
 }: {
-  leistungen: HomeContent["leistungen"];
-  /** Auf der Unterseite steht die Ueberschrift schon im Seitenkopf. */
-  kopf?: boolean;
-  /** 0 = alle zeigen, sonst gekuerzter Anriss mit Link auf die Unterseite. */
-  grenze?: number;
+  kicker?: Text;
+  titel?: Text;
+  text?: Text;
+  eintraege?: (LeistungsEintrag | null)[] | null;
+  mitKopf?: boolean | null;
+  /** 0 oder leer = alle zeigen, sonst gekuerzter Anriss mit Link. */
+  grenze?: number | null;
 }) {
-  const eintraege = grenze
-    ? leistungen.eintraege.slice(0, grenze)
-    : leistungen.eintraege;
+  const alle = (eintraege ?? []).filter(Boolean);
+  const sichtbar = grenze && grenze > 0 ? alle.slice(0, grenze) : alle;
 
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        {kopf ? (
-          <Blockkopf
-            kicker={leistungen.kicker}
-            titel={leistungen.titel}
-            text={leistungen.text}
-          />
-        ) : null}
+        {mitKopf ? <Blockkopf kicker={kicker} titel={titel} text={text} /> : null}
 
         <ul
-          className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ${kopf ? "mt-12" : ""}`}
+          className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ${mitKopf ? "mt-12" : ""}`}
         >
-          {eintraege.map((e) => (
+          {sichtbar.map((e, i) => (
             <li
-              key={e.titel}
+              key={e?.titel ?? i}
               className="flex h-full flex-col rounded-2xl border border-linie bg-flaeche p-6 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-akzent/40 hover:shadow-md"
             >
-              <h3 className="text-lg font-medium tracking-tight">{e.titel}</h3>
+              <h3 className="text-lg font-medium tracking-tight">{e?.titel}</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-gedaempft">
-                {e.text}
+                {e?.text}
               </p>
-              {e.preisHinweis ? (
+              {e?.preisHinweis ? (
                 <p className="mt-auto pt-5 text-xs font-medium tracking-wide text-akzent">
                   {e.preisHinweis}
                 </p>
@@ -49,7 +47,7 @@ export default function Leistungen({
           ))}
         </ul>
 
-        {grenze ? (
+        {grenze && grenze > 0 ? (
           <Link
             href="/leistungen"
             className="mt-8 inline-block rounded-full border border-linie px-5 py-2.5 text-sm transition-all duration-200 ease-out hover:border-akzent hover:bg-flaeche-2 active:scale-[0.99]"

@@ -1,19 +1,23 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Rahmen from "@/components/Rahmen";
 import { themeSkript } from "@/components/ThemeUmschalter";
-import { getHomeContent } from "@/lib/content";
+import { ladeEinstellungen, ladeSeite, paletteOderStandard } from "@/lib/inhalt";
 
-const { seo, betrieb } = getHomeContent();
+export async function generateMetadata(): Promise<Metadata> {
+  const [{ data: e }, { data: s }] = await Promise.all([
+    ladeEinstellungen(),
+    ladeSeite("home"),
+  ]);
 
-export const metadata: Metadata = {
-  title: {
-    default: seo.title,
-    template: `%s – ${betrieb.name}`,
-  },
-  description: seo.description,
-};
+  return {
+    title: {
+      default: s.seite?.seo?.title ?? e.einstellungen.betrieb.name,
+      template: `%s – ${e.einstellungen.betrieb.name}`,
+    },
+    description: s.seite?.seo?.description ?? undefined,
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: [
@@ -22,9 +26,19 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const anfrage = await ladeEinstellungen();
+  const palette = paletteOderStandard(
+    anfrage.data.einstellungen.design?.palette,
+  );
+
   return (
-    <html lang="de" className="h-full antialiased" suppressHydrationWarning>
+    <html
+      lang="de"
+      data-palette={palette}
+      className="h-full antialiased"
+      suppressHydrationWarning
+    >
       <head>
         {/* setzt den Farbmodus vor dem ersten Paint – verhindert Aufblitzen */}
         <script dangerouslySetInnerHTML={{ __html: themeSkript }} />
@@ -36,9 +50,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Zum Inhalt springen
         </a>
-        <Header betrieb={betrieb} />
-        <main id="inhalt">{children}</main>
-        <Footer betrieb={betrieb} />
+        <Rahmen anfrage={anfrage}>{children}</Rahmen>
       </body>
     </html>
   );
