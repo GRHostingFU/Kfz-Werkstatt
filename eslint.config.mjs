@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Von TinaCMS erzeugt, wird bei jedem Build neu geschrieben.
     "tina/__generated__/**",
+    // Fertig gebaute Editor-Oberflaeche von TinaCMS.
+    "public/admin/**",
   ]),
 ]);
 
