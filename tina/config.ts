@@ -37,7 +37,9 @@ export default defineConfig({
         ui: {
           // Eine einzelne Seite: kein Anlegen/Loeschen im Editor.
           allowedActions: { create: false, delete: false },
-          router: () => "/",
+          // Bewusst kein `router`: der wuerde den Editor in die visuelle
+          // Ansicht schicken, die ohne useTina in den Komponenten keine
+          // Felder anzeigt. Ohne ihn oeffnet sich direkt das Formular.
         },
         fields: [
           {
@@ -322,7 +324,6 @@ export default defineConfig({
         match: { include: "{impressum,datenschutz}" },
         ui: {
           allowedActions: { create: false, delete: false },
-          router: (props) => `/${props.document._sys.filename}`,
         },
         fields: [
           { type: "string", name: "titel", label: "Überschrift" },
