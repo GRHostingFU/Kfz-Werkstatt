@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "Leistungen",
+    "description": "Kein Katalog mit 80 Positionen. Das hier sind die Arbeiten, die bei uns tatsächlich über die Bühne gehen – für alle Fahrzeugmarken, auch für Fahrzeuge mit ein paar Jahren auf dem Buckel."
+  },
+  "bloecke": [
+    {
+      "_template": "seitenkopf",
+      "kicker": "Leistungen",
+      "titel": "Das machen wir jeden Tag",
+      "text": "Kein Katalog mit 80 Positionen. Das hier sind die Arbeiten, die bei uns tatsächlich über die Bühne gehen – für alle Fahrzeugmarken, auch für Fahrzeuge mit ein paar Jahren auf dem Buckel."
+    },
+    {
+      "_template": "leistungen",
+      "kicker": "Leistungen",
+      "titel": "Das machen wir jeden Tag",
+      "text": "Kein Katalog mit 80 Positionen. Das hier sind die Arbeiten, die bei uns tatsächlich über die Bühne gehen – für alle Fahrzeugmarken, auch für Fahrzeuge mit ein paar Jahren auf dem Buckel.",
+      "eintraege": [
+        {
+          "titel": "Inspektion & Wartung",
+          "text": "Nach Herstellervorgabe, mit Eintrag ins Scheckheft. Die Herstellergarantie bleibt dabei bestehen – das ist seit 2003 so geregelt.",
+          "preisHinweis": "ab 149 €"
+        },
+        {
+          "titel": "HU & AU vorbereiten",
+          "text": "Prüfer kommt zweimal die Woche ins Haus. Wir schauen vorher drüber, damit Sie nicht wegen einer Standlichtbirne zweimal antanzen.",
+          "preisHinweis": "Vorabcheck 39 €"
+        },
+        {
+          "titel": "Bremsen & Fahrwerk",
+          "text": "Scheiben, Beläge, Stoßdämpfer, Achsvermessung. Wir zeigen Ihnen das alte Teil, bevor es in die Tonne wandert.",
+          "preisHinweis": "Kostenvoranschlag gratis"
+        },
+        {
+          "titel": "Fehlersuche & Diagnose",
+          "text": "Auslesen kann jeder. Wir nehmen uns die Zeit, dem Fehler bis zum Stecker nachzugehen, statt auf Verdacht Teile zu tauschen.",
+          "preisHinweis": "45 € je angefangene halbe Stunde"
+        },
+        {
+          "titel": "Klimaanlage",
+          "text": "Service, Dichtheitsprüfung, Befüllung – für R134a und R1234yf. Am besten im Frühjahr, bevor alle gleichzeitig kommen.",
+          "preisHinweis": "ab 89 €"
+        },
+        {
+          "titel": "Reifen & Einlagerung",
+          "text": "Wechsel, Wuchten, RDKS anlernen. Einlagerung im trockenen Nebenraum, acht Sätze passen noch rein.",
+          "preisHinweis": "Saison 39 €"
+        }
+      ],
+      "grenze": 0,
+      "mitKopf": false
+    },
+    {
+      "_template": "schluss",
+      "titel": "Auto macht Geräusche? Rufen Sie durch.",
+      "text": "Wenn niemand rangeht, sprechen Sie bitte auf – wir rufen am selben Tag zurück.",
+      "buttonLabel": "Formular ausfüllen",
+      "buttonZiel": "/kontakt"
+    }
+  ]
+}

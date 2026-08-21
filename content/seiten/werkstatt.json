@@ -1,0 +1,82 @@
+{
+  "seo": {
+    "title": "Werkstatt & Team",
+    "description": "Die Halle an der Alten Zechenstraße war früher der Fuhrpark einer Spedition. Wir haben 2011 angefangen, das Dach neu gemacht, und seitdem Stück für Stück umgebaut – meistens im Winter, wenn weniger los ist."
+  },
+  "bloecke": [
+    {
+      "_template": "seitenkopf",
+      "kicker": "Der Laden",
+      "titel": "Zwei Hallen, fünf Leute, kein Schnickschnack"
+    },
+    {
+      "_template": "werkstatt",
+      "kicker": "Der Laden",
+      "titel": "Zwei Hallen, fünf Leute, kein Schnickschnack",
+      "absaetze": [
+        "Die Halle an der Alten Zechenstraße war früher der Fuhrpark einer Spedition. Wir haben 2009 angefangen, das Dach neu gemacht, und seitdem Stück für Stück umgebaut – meistens im Winter, wenn weniger los ist.",
+        "Was wir bewusst nicht gemacht haben: einen Empfangstresen aus Glas. Wer reinkommt, steht direkt in der Halle und redet mit dem, der später auch an seinem Auto schraubt. Das spart uns beiden das Stille-Post-Spiel."
+      ],
+      "bild": "/uploads/bilder/hebebuehne.svg",
+      "bildAlt": "Illustration eines Fahrzeugs auf der Hebebühne während der Inspektion",
+      "zahlen": [
+        {
+          "wert": "15",
+          "label": "Jahre Meisterbetrieb"
+        },
+        {
+          "wert": "5",
+          "label": "Leute im Team"
+        },
+        {
+          "wert": "2",
+          "label": "Hebebühnen + Grube"
+        }
+      ],
+      "mitKopf": false
+    },
+    {
+      "_template": "team",
+      "kicker": "Team",
+      "titel": "Wer bei uns schraubt",
+      "text": "Illustrationen statt Stockfotos – echte Bilder tauschen wir aus, sobald der Fotograf da war.",
+      "mitglieder": [
+        {
+          "name": "Michael Brandner",
+          "rolle": "Kfz-Meister, Inhaber",
+          "text": "Hat die Werkstatt 2011 aufgemacht. Zuständig für Diagnose, Kostenvoranschläge und dafür, dass abends abgeschlossen wird.",
+          "bild": "/uploads/bilder/team-michael.svg",
+          "bildAlt": "Illustriertes Porträt von Michael Brandner"
+        },
+        {
+          "name": "Sabine Brandner",
+          "rolle": "Büro & Terminplanung",
+          "text": "Nimmt das Telefon ab, schreibt die Rechnungen und sagt Ihnen ehrlich, wenn diese Woche wirklich nichts mehr frei ist.",
+          "bild": "/uploads/bilder/team-sabine.svg",
+          "bildAlt": "Illustriertes Porträt von Sabine Brandner"
+        },
+        {
+          "name": "Tarek Yildiz",
+          "rolle": "Kfz-Mechatroniker",
+          "text": "Seit 2016 dabei, kam als Geselle aus dem Nutzfahrzeugbereich. Fahrwerk, Bremsen, Achsvermessung.",
+          "bild": "/uploads/bilder/team-tarek.svg",
+          "bildAlt": "Illustriertes Porträt von Tarek Yildiz"
+        },
+        {
+          "name": "Jonas Peters",
+          "rolle": "Auszubildender, 3. Lehrjahr",
+          "text": "Macht Reifen, Ölservice und inzwischen auch Bremsen allein. Fragt viel, das ist gut so.",
+          "bild": "/uploads/bilder/team-jonas.svg",
+          "bildAlt": "Illustriertes Porträt von Jonas Peters"
+        }
+      ]
+    },
+    {
+      "_template": "schluss",
+      "titel": "Auto macht Geräusche? Rufen Sie durch.",
+      "text": "Wenn niemand rangeht, sprechen Sie bitte auf – wir rufen am selben Tag zurück.",
+      "buttonLabel": "Formular ausfüllen",
+      "buttonZiel": "/kontakt"
+    }
+  ]
+}

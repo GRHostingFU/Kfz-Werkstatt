@@ -6,7 +6,15 @@
 */
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
+/*
+  Farbwelten. Gewaehlt wird im Editor nur der Name, die Werte stehen hier –
+  dadurch kann im CMS nichts Unlesbares entstehen. Jede Palette ist in Hell
+  und Dunkel abgestimmt.
+*/
+
+/* Standard: warmes Werkstatt-Braun mit Rost als Akzent */
+:root,
+:root[data-palette="werkstatt"] {
   --grund: #f6f4f1;
   --flaeche: #ffffff;
   --flaeche-2: #efece7;
@@ -18,7 +26,8 @@
   --auf-akzent: #ffffff;
 }
 
-.dark {
+.dark,
+:root[data-palette="werkstatt"].dark {
   --grund: #14110f;
   --flaeche: #1e1a17;
   --flaeche-2: #262019;
@@ -28,6 +37,81 @@
   --akzent: #e07a35;
   --akzent-weich: rgb(224 122 53 / 0.14);
   --auf-akzent: #1c1917;
+}
+
+/* Kuehl und technisch: Graublau mit kraeftigem Blau */
+:root[data-palette="stahl"] {
+  --grund: #f2f4f6;
+  --flaeche: #ffffff;
+  --flaeche-2: #e7ebef;
+  --inhalt: #16202a;
+  --gedaempft: #4d5b68;
+  --linie: rgb(22 32 42 / 0.12);
+  --akzent: #1d5f9e;
+  --akzent-weich: rgb(29 95 158 / 0.1);
+  --auf-akzent: #ffffff;
+}
+
+:root[data-palette="stahl"].dark {
+  --grund: #0e1419;
+  --flaeche: #171f27;
+  --flaeche-2: #1e2831;
+  --inhalt: #e8eef4;
+  --gedaempft: #9aa8b5;
+  --linie: rgb(232 238 244 / 0.14);
+  --akzent: #5aa2e0;
+  --akzent-weich: rgb(90 162 224 / 0.14);
+  --auf-akzent: #0e1419;
+}
+
+/* Ruhig und gedeckt: Salbeigruen mit Tannengruen */
+:root[data-palette="wald"] {
+  --grund: #f3f5f1;
+  --flaeche: #ffffff;
+  --flaeche-2: #e8ece4;
+  --inhalt: #1a211a;
+  --gedaempft: #4f5b4d;
+  --linie: rgb(26 33 26 / 0.12);
+  --akzent: #2f6b45;
+  --akzent-weich: rgb(47 107 69 / 0.1);
+  --auf-akzent: #ffffff;
+}
+
+:root[data-palette="wald"].dark {
+  --grund: #101510;
+  --flaeche: #182018;
+  --flaeche-2: #1f291f;
+  --inhalt: #eaf0e8;
+  --gedaempft: #9fae9c;
+  --linie: rgb(234 240 232 / 0.14);
+  --akzent: #57a877;
+  --akzent-weich: rgb(87 168 119 / 0.14);
+  --auf-akzent: #101510;
+}
+
+/* Kraeftig und auffaellig: fast Schwarz mit Signalgelb */
+:root[data-palette="signal"] {
+  --grund: #f5f5f4;
+  --flaeche: #ffffff;
+  --flaeche-2: #ececeb;
+  --inhalt: #18181b;
+  --gedaempft: #52525b;
+  --linie: rgb(24 24 27 / 0.12);
+  --akzent: #a16207;
+  --akzent-weich: rgb(161 98 7 / 0.1);
+  --auf-akzent: #ffffff;
+}
+
+:root[data-palette="signal"].dark {
+  --grund: #101012;
+  --flaeche: #1a1a1d;
+  --flaeche-2: #222226;
+  --inhalt: #f4f4f5;
+  --gedaempft: #a1a1aa;
+  --linie: rgb(244 244 245 / 0.14);
+  --akzent: #eab308;
+  --akzent-weich: rgb(234 179 8 / 0.14);
+  --auf-akzent: #101012;
 }
 
 @theme inline {
@@ -66,7 +150,7 @@ body {
   background-color: var(--grund);
   color: var(--inhalt);
   font-family: var(--font-sans);
-  /* weicher Uebergang beim Umschalten, ohne die Navigation flackern zu lassen */
+  /* weicher Uebergang beim Umschalten von Modus oder Palette */
   transition:
     background-color 0.25s ease,
     color 0.25s ease;

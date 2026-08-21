@@ -1,0 +1,76 @@
+{
+  "seo": {
+    "title": "Ablauf & häufige Fragen",
+    "description": "Sie müssen kein Portal benutzen und keinen Account anlegen. Anrufen reicht."
+  },
+  "bloecke": [
+    {
+      "_template": "seitenkopf",
+      "kicker": "So läuft's",
+      "titel": "In 3 Schritten zum Termin",
+      "text": "Sie müssen kein Portal benutzen und keinen Account anlegen. Anrufen reicht."
+    },
+    {
+      "_template": "ablauf",
+      "kicker": "So läuft's",
+      "titel": "In 3 Schritten zum Termin",
+      "text": "Sie müssen kein Portal benutzen und keinen Account anlegen. Anrufen reicht.",
+      "schritte": [
+        {
+          "nummer": "01",
+          "titel": "Anrufen oder Formular schicken",
+          "text": "Sagen Sie uns, was das Auto macht – Geräusch, Warnleuchte, fälliger Service. Wenn Sie es nicht beschreiben können: auch gut, dafür sind wir da."
+        },
+        {
+          "nummer": "02",
+          "titel": "Wir schauen drauf und melden uns",
+          "text": "Bei planbaren Arbeiten bekommen Sie den Preis vorab. Kommt beim Schrauben etwas dazu, rufen wir an, bevor wir weitermachen. Ohne Rückruf keine Mehrkosten."
+        },
+        {
+          "nummer": "03",
+          "titel": "Abholen, alte Teile inklusive",
+          "text": "Wir gehen die Rechnung mit Ihnen durch und zeigen, was getauscht wurde. Die ausgebauten Teile können Sie mitnehmen, wenn Sie möchten."
+        }
+      ],
+      "mitKopf": false
+    },
+    {
+      "_template": "faq",
+      "kicker": "Häufige Fragen",
+      "titel": "Was Kunden uns am Telefon fragen",
+      "eintraege": [
+        {
+          "frage": "Darf ich mein eigenes Öl mitbringen?",
+          "antwort": "Ja. Wir berechnen dann nur die Arbeitszeit und die Entsorgung des Altöls. Wichtig ist nur, dass die Freigabe des Herstellers zum Motor passt – bringen Sie den Kanister mit, wir schauen kurz auf das Etikett."
+        },
+        {
+          "frage": "Verliere ich die Herstellergarantie, wenn ich nicht zur Vertragswerkstatt gehe?",
+          "antwort": "Nein. Wir warten nach Herstellervorgabe, dokumentieren alles im Scheckheft und verbauen Teile in Erstausrüsterqualität. Damit bleibt die Garantie erhalten. Bei laufender Anschlussgarantie eines Händlers lohnt vorher ein Blick in die Bedingungen – wir helfen beim Lesen."
+        },
+        {
+          "frage": "Was kostet die Stunde bei Ihnen?",
+          "antwort": "90 € netto für Mechanik, 105 € netto für Diagnose- und Elektrikarbeiten. Keine versteckten Pauschalen, keine „Kleinteile-Zuschläge“ von 15 Prozent."
+        },
+        {
+          "frage": "Bekomme ich einen Ersatzwagen?",
+          "antwort": "Wir haben zwei Kleinwagen. Kostenlos für die Dauer der Reparatur, Sie zahlen nur den Sprit. Bitte bei der Terminvereinbarung mit ansagen, sie sind oft ausgebucht."
+        },
+        {
+          "frage": "Reparieren Sie auch ältere Fahrzeuge?",
+          "antwort": "Gerne. Ab etwa 15 Jahren sagen wir vorher ehrlich, ob sich die Reparatur noch rechnet. Manchmal ist die Antwort nein – dann sagen wir das auch, statt Ihnen 2.000 € in ein Auto zu stecken, das im Herbst durch die HU fällt."
+        },
+        {
+          "frage": "Kann ich mein Auto abends abstellen?",
+          "antwort": "Ja. Der Schlüsselbriefkasten ist links neben dem Rolltor. Zettel mit Name, Telefonnummer und Auftrag dazu, dann steht das Auto morgens um halb acht drin."
+        }
+      ]
+    },
+    {
+      "_template": "schluss",
+      "titel": "Auto macht Geräusche? Rufen Sie durch.",
+      "text": "Wenn niemand rangeht, sprechen Sie bitte auf – wir rufen am selben Tag zurück.",
+      "buttonLabel": "Formular ausfüllen",
+      "buttonZiel": "/kontakt"
+    }
+  ]
+}

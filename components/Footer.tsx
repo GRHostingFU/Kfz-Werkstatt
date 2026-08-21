@@ -1,12 +1,15 @@
 import Link from "next/link";
-import type { HomeContent } from "@/lib/content";
-import { telHref } from "@/lib/content";
-import { navigation } from "@/lib/navigation";
+import { telHref } from "@/lib/inhalt";
+import type { Betrieb, NaviPunkt, Text } from "./typen";
 
 export default function Footer({
   betrieb,
+  navigation,
+  hinweis,
 }: {
-  betrieb: HomeContent["betrieb"];
+  betrieb: Betrieb;
+  navigation: (NaviPunkt | null)[];
+  hinweis?: Text;
 }) {
   return (
     <footer className="mt-auto border-t border-linie bg-flaeche-2">
@@ -20,7 +23,7 @@ export default function Footer({
             {betrieb.ort}
           </p>
           <a
-            href={telHref(betrieb.telefon)}
+            href={telHref(betrieb.telefon ?? "")}
             className="mt-4 inline-block text-sm font-medium text-akzent transition-opacity duration-200 ease-out hover:opacity-70"
           >
             {betrieb.telefon}
@@ -32,13 +35,13 @@ export default function Footer({
             Seiten
           </p>
           <ul className="space-y-2">
-            {navigation.map((l) => (
-              <li key={l.ziel}>
+            {navigation.filter(Boolean).map((l) => (
+              <li key={l?.ziel}>
                 <Link
-                  href={l.ziel}
+                  href={l?.ziel ?? "/"}
                   className="text-gedaempft transition-colors duration-200 ease-out hover:text-akzent"
                 >
-                  {l.label}
+                  {l?.label}
                 </Link>
               </li>
             ))}
@@ -50,10 +53,10 @@ export default function Footer({
             Öffnungszeiten
           </p>
           <ul className="space-y-2 text-gedaempft">
-            {betrieb.oeffnungszeiten.map((o) => (
-              <li key={o.tage}>
-                <span className="block text-inhalt">{o.tage}</span>
-                {o.zeit}
+            {(betrieb.oeffnungszeiten ?? []).filter(Boolean).map((o, i) => (
+              <li key={o?.tage ?? i}>
+                <span className="block text-inhalt">{o?.tage}</span>
+                {o?.zeit}
               </li>
             ))}
           </ul>
@@ -62,7 +65,7 @@ export default function Footer({
 
       <div className="border-t border-linie">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-5 text-xs text-gedaempft sm:px-8">
-          <p>Demo-Seite ohne Tracking, ohne Cookies, ohne externe Schriftarten.</p>
+          <p>{hinweis}</p>
           <nav className="flex gap-5">
             <Link
               href="/impressum"

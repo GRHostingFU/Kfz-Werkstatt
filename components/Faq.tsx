@@ -1,27 +1,35 @@
 import { Blockkopf } from "./Abschnitt";
-import type { HomeContent } from "@/lib/content";
+import type { Frage, Text } from "./typen";
 
 /*
   Bewusst native <details>-Elemente: kein Client-JS, keine Hydration-Kosten,
   funktioniert sofort beim ersten Paint und ist per Tastatur bedienbar.
 */
-export default function Faq({ faq }: { faq: HomeContent["faq"] }) {
+export default function Faq({
+  kicker,
+  titel,
+  eintraege,
+}: {
+  kicker?: Text;
+  titel?: Text;
+  eintraege?: (Frage | null)[] | null;
+}) {
   return (
     <section className="border-t border-linie bg-flaeche-2/60 py-16 md:py-24">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
-          <Blockkopf kicker={faq.kicker} titel={faq.titel} />
+          <Blockkopf kicker={kicker} titel={titel} />
         </div>
 
         <div className="lg:col-span-8">
-          {faq.eintraege.map((e) => (
+          {(eintraege ?? []).filter(Boolean).map((e, i) => (
             <details
-              key={e.frage}
+              key={e?.frage ?? i}
               className="group mb-3 rounded-2xl border border-linie bg-flaeche px-5 transition-colors duration-200 ease-out hover:border-akzent/40 open:border-akzent/40"
             >
               <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 text-left [&::-webkit-details-marker]:hidden">
                 <span className="text-[1.0625rem] font-medium tracking-tight">
-                  {e.frage}
+                  {e?.frage}
                 </span>
                 <span
                   aria-hidden="true"
@@ -31,7 +39,7 @@ export default function Faq({ faq }: { faq: HomeContent["faq"] }) {
                 </span>
               </summary>
               <p className="max-w-2xl pb-5 leading-relaxed text-gedaempft">
-                {e.antwort}
+                {e?.antwort}
               </p>
             </details>
           ))}

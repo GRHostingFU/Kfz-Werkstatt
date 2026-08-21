@@ -13,23 +13,24 @@ npm run dev:tina     # Website + Live-Editor  -> http://localhost:3000/admin
 ## Struktur
 
 ```
-app/                 layout.tsx (Header/Footer/Theme), page.tsx, globals.css
-                     leistungen/, werkstatt/, ablauf/, kontakt/
-                     impressum/, datenschutz/
-components/          Header, Hero, Wegweiser, Leistungen, Werkstatt, Team,
-                     Ablauf, Faq, Kontakt, TerminFormular, Schluss, Footer
-                     ThemeUmschalter, Bild, Abschnitt, Rechtstext
-lib/navigation.ts    Navigationspunkte (von Header und Footer geteilt)
+app/                 layout.tsx (Rahmen, Palette), page.tsx (Startseite)
+                     [slug]/ – alle weiteren Seiten aus content/seiten/
+                     impressum/, datenschutz/, globals.css
+components/          Bloecke.tsx – rendert die Abschnitte einer Seite
+                     Rahmen.tsx – Kopf, Fuß und Farbwelt
+                     Hero, Wegweiser, Leistungen, Werkstatt, Team, Ablauf,
+                     Faq, Kontakt, Schluss, TerminFormular, Bild, …
+lib/inhalt.ts        lädt Seiten und Einstellungen (Tina, sonst JSON)
 public/bilder/       SVG-Illustrationen (Halle, Hebebühne, Porträts)
-content/pages/       home.json – alle Texte und Bilder der Startseite
-                     impressum.json, datenschutz.json
-lib/content.ts       typisierter Zugriff auf den Inhalt
-tina/config.ts       TinaCMS-Collections für den Editor
+content/seiten/      home, leistungen, werkstatt, ablauf, kontakt
+content/einstellungen/global.json – Betrieb, Navigation, Farbwelt
+content/pages/       impressum.json, datenschutz.json
+tina/config.ts       Collections, tina/bloecke.ts die Abschnittstypen
 ```
 
-Die gesamte Startseite wird aus `content/pages/home.json` gerendert. Wer im
-Editor speichert, ändert diese Datei – daraus baut Next.js beim nächsten
-Deploy wieder eine statische Seite.
+Jede Seite ist eine Liste von Abschnitten. Im Editor lassen sie sich
+hinzufügen, löschen und per Ziehen umsortieren; wer speichert, ändert die
+JSON-Datei im Repo, und Next.js baut daraus wieder statische Seiten.
 
 ## TinaCMS einrichten
 
@@ -45,18 +46,18 @@ selbst funktioniert in jedem Fall, auch ganz ohne Tina.
 
 ## Deployment auf Vercel
 
-Repository importieren, fertig – das Standard-Build-Kommando `npm run build`
-(= `next build`) braucht keine Umgebungsvariablen und läuft beim ersten
-Versuch durch.
+Build-Kommando in den Projekteinstellungen: **`npm run build:tina`**. Nötig
+sind die beiden Umgebungsvariablen `NEXT_PUBLIC_TINA_CLIENT_ID` und
+`TINA_TOKEN`.
 
-Sobald die Tina-Credentials in den Vercel-Projekt-Einstellungen hinterlegt
-sind, kann das Build-Kommando auf `npm run build:tina` umgestellt werden –
-dann wird der Editor mit nach `/admin` deployt.
+`build:tina` läuft über `scripts/build-tina.mjs` und macht zwei Dinge: den
+GraphQL-Client erzeugen (den die Seiten importieren) und dann Next bauen. Die
+TinaCloud-Prüfung läuft nur in der Produktion – Vorschauen bauen einen
+Feature-Branch, den TinaCloud nicht indexiert hat, und würden sonst
+grundsätzlich fehlschlagen.
 
-`build:tina` läuft über `scripts/build-tina.mjs`. Auf Vorschau-Deployments
-überspringt es die TinaCloud-Prüfung, weil dort meist ein Feature-Branch
-gebaut wird und TinaCloud nur indexierte Branches kennt – sonst wäre jede
-Vorschau rot. In der Produktion bleibt die Prüfung aktiv.
+`npm run build` allein genügt nicht mehr: ohne vorherige Codegenerierung fehlt
+`tina/__generated__/client.ts`.
 
 ## Bewusste Entscheidungen
 
@@ -72,6 +73,14 @@ Vorschau rot. In der Produktion bleibt die Prüfung aktiv.
 - **Fünf Seiten statt One-Pager.** Startseite mit Anrissen, dazu Leistungen,
   Werkstatt & Team, Ablauf & Fragen sowie Kontakt. Header und Footer stehen im
   Root-Layout, die Seiten liefern nur ihren Inhalt.
+- **Vier Farbwelten statt freier Farbwahl.** Im Editor wird nur ein Name
+  gewählt (`werkstatt`, `stahl`, `wald`, `signal`), die Werte stehen in
+  `app/globals.css` – jeweils für Hell und Dunkel abgestimmt. So kann im CMS
+  nichts Unlesbares entstehen.
+- **Live-Bearbeitung über `useTina`.** Der Server lädt die Daten, im Editor
+  übernimmt das Formular: Änderungen erscheinen beim Tippen in der Vorschau.
+  Ist TinaCloud nicht erreichbar – etwa in der CI ohne Zugangsdaten –, fällt
+  die Seite auf die JSON-Dateien im Repo zurück und wird trotzdem gebaut.
 - **Keine Markennamen.** Es ist durchgehend von „alle Fahrzeugmarken“ die Rede.
 - **Bilder sind selbst gezeichnete SVGs** in `public/bilder/`. Sie liegen im
   Projekt, laden sofort und laufen am Image-Optimizer vorbei (siehe

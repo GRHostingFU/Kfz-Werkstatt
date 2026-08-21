@@ -1,23 +1,23 @@
-import type { ReactNode } from "react";
+import type { Text } from "./typen";
 
 /** Einheitlicher Seitenkopf – haelt Abstaende und Typografie ueber alle Seiten gleich. */
 export function Seitenkopf({
   kicker,
   titel,
   text,
-  children,
 }: {
-  kicker: string;
-  titel: string;
-  text?: string;
-  children?: ReactNode;
+  kicker?: Text;
+  titel?: Text;
+  text?: Text;
 }) {
   return (
     <header className="border-b border-linie">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 md:py-20">
-        <p className="text-xs font-medium tracking-[0.18em] text-akzent uppercase">
-          {kicker}
-        </p>
+        {kicker ? (
+          <p className="text-xs font-medium tracking-[0.18em] text-akzent uppercase">
+            {kicker}
+          </p>
+        ) : null}
         <h1 className="mt-4 max-w-[18ch] text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
           {titel}
         </h1>
@@ -26,7 +26,6 @@ export function Seitenkopf({
             {text}
           </p>
         ) : null}
-        {children}
       </div>
     </header>
   );
@@ -38,21 +37,21 @@ export function Blockkopf({
   titel,
   text,
 }: {
-  kicker: string;
-  titel: string;
-  text?: string;
+  kicker?: Text;
+  titel?: Text;
+  text?: Text;
 }) {
   return (
     <div className="max-w-2xl">
-      <p className="text-xs font-medium tracking-[0.18em] text-akzent uppercase">
-        {kicker}
-      </p>
+      {kicker ? (
+        <p className="text-xs font-medium tracking-[0.18em] text-akzent uppercase">
+          {kicker}
+        </p>
+      ) : null}
       <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
         {titel}
       </h2>
-      {text ? (
-        <p className="mt-5 leading-relaxed text-gedaempft">{text}</p>
-      ) : null}
+      {text ? <p className="mt-5 leading-relaxed text-gedaempft">{text}</p> : null}
     </div>
   );
 }

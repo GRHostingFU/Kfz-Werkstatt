@@ -1,20 +1,16 @@
-import Hero from "@/components/Hero";
-import Wegweiser from "@/components/Wegweiser";
-import Leistungen from "@/components/Leistungen";
-import Ablauf from "@/components/Ablauf";
-import Schluss from "@/components/Schluss";
-import { getHomeContent } from "@/lib/content";
+import Bloecke from "@/components/Bloecke";
+import { ladeEinstellungen, ladeSeite } from "@/lib/inhalt";
 
-export default function Startseite() {
-  const inhalt = getHomeContent();
+export default async function Startseite() {
+  const [anfrage, einstellungen] = await Promise.all([
+    ladeSeite("home"),
+    ladeEinstellungen(),
+  ]);
 
   return (
-    <>
-      <Hero hero={inhalt.hero} />
-      <Wegweiser />
-      <Leistungen leistungen={inhalt.leistungen} grenze={3} />
-      <Ablauf ablauf={inhalt.ablauf} />
-      <Schluss />
-    </>
+    <Bloecke
+      anfrage={anfrage}
+      betrieb={einstellungen.data.einstellungen.betrieb}
+    />
   );
 }

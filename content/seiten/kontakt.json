@@ -1,0 +1,20 @@
+{
+  "seo": {
+    "title": "Kontakt & Termin",
+    "description": "Wir sitzen nicht den ganzen Tag im Büro. Wenn niemand rangeht, sprechen Sie bitte auf – wir rufen am selben Tag zurück."
+  },
+  "bloecke": [
+    {
+      "_template": "seitenkopf",
+      "kicker": "Kontakt",
+      "titel": "Termin? Am schnellsten geht das Telefon."
+    },
+    {
+      "_template": "kontakt",
+      "kicker": "Kontakt",
+      "titel": "Termin? Am schnellsten geht das Telefon.",
+      "text": "Wir sitzen nicht den ganzen Tag im Büro. Wenn niemand rangeht, sprechen Sie bitte auf – wir rufen am selben Tag zurück.",
+      "formularHinweis": "Das Formular ist im Demo-Betrieb: Ihre Eingaben werden nicht verschickt und nicht gespeichert."
+    }
+  ]
+}

@@ -1,13 +1,15 @@
-import type { HomeContent } from "@/lib/content";
-import { telHref } from "@/lib/content";
 import TerminFormular from "./TerminFormular";
+import { telHref } from "@/lib/inhalt";
+import type { Betrieb, Text } from "./typen";
 
 export default function Kontakt({
-  kontakt,
+  text,
+  formularHinweis,
   betrieb,
 }: {
-  kontakt: HomeContent["kontakt"];
-  betrieb: HomeContent["betrieb"];
+  text?: Text;
+  formularHinweis?: Text;
+  betrieb: Betrieb;
 }) {
   return (
     <section className="py-16 md:py-24">
@@ -18,14 +20,14 @@ export default function Kontakt({
               Direkt anrufen
             </p>
             <a
-              href={telHref(betrieb.telefon)}
+              href={telHref(betrieb.telefon ?? "")}
               className="mt-3 block text-2xl font-semibold tracking-tight transition-colors duration-200 ease-out hover:text-akzent"
             >
               {betrieb.telefon}
             </a>
-            <p className="mt-4 text-sm leading-relaxed text-gedaempft">
-              {kontakt.text}
-            </p>
+            {text ? (
+              <p className="mt-4 text-sm leading-relaxed text-gedaempft">{text}</p>
+            ) : null}
 
             <dl className="mt-8 space-y-3 border-t border-linie pt-6 text-sm">
               <div className="flex gap-4">
@@ -40,10 +42,10 @@ export default function Kontakt({
                 <dt className="w-32 shrink-0 text-gedaempft">E-Mail</dt>
                 <dd className="break-all">{betrieb.email}</dd>
               </div>
-              {betrieb.oeffnungszeiten.map((o) => (
-                <div key={o.tage} className="flex gap-4">
-                  <dt className="w-32 shrink-0 text-gedaempft">{o.tage}</dt>
-                  <dd>{o.zeit}</dd>
+              {(betrieb.oeffnungszeiten ?? []).filter(Boolean).map((o, i) => (
+                <div key={o?.tage ?? i} className="flex gap-4">
+                  <dt className="w-32 shrink-0 text-gedaempft">{o?.tage}</dt>
+                  <dd>{o?.zeit}</dd>
                 </div>
               ))}
             </dl>
@@ -51,7 +53,7 @@ export default function Kontakt({
         </div>
 
         <div className="lg:col-span-7">
-          <TerminFormular hinweis={kontakt.formularHinweis} />
+          <TerminFormular hinweis={formularHinweis ?? ""} />
         </div>
       </div>
     </section>
